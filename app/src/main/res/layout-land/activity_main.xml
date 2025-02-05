@@ -6,7 +6,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#a99a86"
     android:padding="16dp">
 
     <TextView
@@ -47,7 +46,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#e3dac9"
+        android:background="#808080"
         android:padding="16dp">
 
         <TextView
@@ -174,7 +173,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:backgroundTint="#e3dac9"
+                android:backgroundTint="#808080"
                 android:layout_marginStart="-1dp">
 
                 <LinearLayout
@@ -206,7 +205,7 @@
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:layout_marginStart="10dp"
-                android:backgroundTint="#e3dac9">
+                android:backgroundTint="#808080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -234,7 +233,7 @@
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:layout_marginStart="12dp"
-                android:backgroundTint="#e3dac9">
+                android:backgroundTint="#808080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -261,7 +260,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:backgroundTint="#e3dac9"
+                android:backgroundTint="#808080"
                 android:layout_marginStart="0dp">
 
                 <LinearLayout
@@ -290,7 +289,7 @@
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:layout_marginStart="10dp"
-                android:backgroundTint="#e3dac9">
+                android:backgroundTint="#808080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -318,7 +317,7 @@
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:layout_marginStart="12dp"
-                android:backgroundTint="#e3dac9">
+                android:backgroundTint="#808080">
 
                 <LinearLayout
                     android:layout_width="match_parent"

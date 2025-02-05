@@ -20,7 +20,7 @@
                 android:id="@+id/tv_id_pelanggan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ID Pelanggan"
+                android:text="@string/card_pelanggan_id"
                 android:textStyle="italic"
                 android:textSize="14sp"
                 android:textColor="@android:color/darker_gray"
@@ -48,8 +48,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No HP"
+                android:layout_marginTop="2dp"
                 android:textSize="14sp"
                 android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_terdatar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Terdaftar"
+                android:textSize="14dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="14dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Hubungi"
-                    android:backgroundTint="#008000"
+                    android:backgroundTint="#B0C4DE"
                     android:textColor="@android:color/white"
                     android:layout_marginEnd="8dp"/>
 
@@ -73,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Lihat"
-                    android:backgroundTint="#ff7f00"
+                    android:backgroundTint="#778899"
                     android:textColor="@android:color/white"/>
 
             </LinearLayout>
