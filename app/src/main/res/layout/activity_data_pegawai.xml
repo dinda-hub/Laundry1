@@ -5,14 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pelanggan.DataPelangganActivity">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvDATA_PELANGGAN"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/data_pelanggan">
-    </androidx.recyclerview.widget.RecyclerView>
+    tools:context=".pegawai.DataPegawaiActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,12 +13,20 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/fabDATA_PENGGUNA_Tambah"
+            android:id="@+id/fabDATA_PEGAWAI_Tambah"
             android:src="@drawable/plus"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDATA_PEGAWAI"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/data_pegawai">
+
+        </androidx.recyclerview.widget.RecyclerView>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

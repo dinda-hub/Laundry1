@@ -1,4 +1,29 @@
 <resources>
     <string name="app_name">Laundry</string>
     <string name="card_pelanggan_id">ID Pelanggan</string>
+    <string name="card_pelanggan_nama">Nama Pelanggan</string>
+    <string name="card_pelanggan_alamat">Alamat</string>
+    <string name="card_pelanggan_No_HP">No HP</string>
+    <string name="card_pelanggan_terdaftar">Terdaftar</string>
+    <string name="card_pelanggan_hubungi">Hubungi</string>
+    <string name="card_pelanggan_Lihat">Lihat</string>
+    <string name="card_pegawai_namapegawai">Nama Pegawai</string>
+    <string name="card_pegawai_alamat">Alamat</string>
+    <string name="card_pegawai_ID_Pegawai">ID Pegawai</string>
+    <string name="card_pegawai_No_HP">No HP</string>
+    <string name="card_pegawai_terdaftar">Terdaftar</string>
+    <string name="card_pegawai_cabang">Cabang</string>
+    <string name="card_pegawai_hubungi">Hubungi</string>
+    <string name="card_pegawai_lihat">Lihat</string>
+    <string name="text_tambahanpelanggan_tambah_pelanggan">Tambah Pelanggan</string>
+    <string name="text_tambahanpelanggan_nama_lengkap">Nama Lengkap</string>
+    <string name="text_tambahanpelanggan_No_HPaktif">No HP Aktif</string>
+    <string name="hint_tambahanpelanggan_namalengkap">Nama Lengkap</string>
+    <string name="text_tambahanpelanggan_alamat">Alamat</string>
+    <string name="hint_tambahanpelanggan_alamat">Alamat</string>
+    <string name="hint_tambahanpelanggan_nohpaktif">No HP Aktif</string>
+    <string name="text_tambahanpelanggan_simpan">Simpan</string>
+    <string name="text_pegawai_tambah">Tambah Pegawai</string>
+    <string name="text_tambahpegawai_cabang">Cabang</string>
+    <string name="hint_tambahpegawai_cabang">Cabang</string>
 </resources>

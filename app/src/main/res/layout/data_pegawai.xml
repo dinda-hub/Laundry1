@@ -17,20 +17,20 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/tv_id_pelanggan"
+                android:id="@+id/tv_id_pegawai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/card_pelanggan_id"
+                android:text="@string/card_pegawai_ID_Pegawai"
                 android:textStyle="italic"
                 android:textSize="14sp"
                 android:textColor="@android:color/darker_gray"
                 android:layout_marginBottom="4dp"/>
 
             <TextView
-                android:id="@+id/tv_nama_pelanggan"
+                android:id="@+id/tv_nama_pegawai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/card_pelanggan_nama"
+                android:text="@string/card_pegawai_namapegawai"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="4dp"/>
@@ -39,7 +39,7 @@
                 android:id="@+id/tv_alamat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/card_pelanggan_alamat"
+                android:text="@string/card_pegawai_alamat"
                 android:textSize="14sp"
                 android:layout_marginBottom="2dp"/>
 
@@ -47,7 +47,7 @@
                 android:id="@+id/tv_no_hp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/card_pelanggan_No_HP"
+                android:text="@string/card_pegawai_No_HP"
                 android:layout_marginTop="2dp"
                 android:textSize="14sp"
                 android:layout_marginBottom="8dp"/>
@@ -56,9 +56,18 @@
                 android:id="@+id/tv_terdaftar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/card_pelanggan_terdaftar"
+                android:text="@string/card_pegawai_terdaftar"
                 android:textSize="14dp"
                 android:layout_marginTop="-5dp"
+                android:layout_marginBottom="14dp"/>
+
+            <TextView
+                android:id="@+id/tv_cabang"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/card_pegawai_cabang"
+                android:textSize="14dp"
+                android:layout_marginTop="-10dp"
                 android:layout_marginBottom="14dp"/>
 
             <LinearLayout
@@ -72,7 +81,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/card_pelanggan_hubungi"
+                    android:text="@string/card_pegawai_hubungi"
                     android:backgroundTint="#B0C4DE"
                     android:textColor="@android:color/white"
                     android:layout_marginEnd="8dp"/>
@@ -82,7 +91,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/card_pelanggan_Lihat"
+                    android:text="@string/card_pegawai_lihat"
                     android:backgroundTint="#778899"
                     android:textColor="@android:color/white"/>
 
