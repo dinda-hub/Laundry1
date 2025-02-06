@@ -1,40 +1,51 @@
-package com.reza.laundry
+package com.reza
 
-import android.os.Build
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.reza.laundry.R
+import com.reza.laundry.pegawai.DataPegawaiActivity
+import com.reza.laundry.pelanggan.DataPelangganActivity
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        // Cek apakah perangkat mendukung fitur WindowInsets
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            // Menyesuaikan padding untuk area sistem (status bar, navigasi)
-            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { view, insets ->
-                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-                view.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-                insets
-            }
-            val tvGreeting = findViewById<TextView>(R.id.greeting_text)
-            tvGreeting.text = getGreetingMessage()
-
-            val tvDate = findViewById<TextView>(R.id.date_text)
-            tvDate.text = getCurrentDate()
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
-    }
 
-    private fun getCurrentDate(): String {
-        val currentDate = LocalDate.now()
-        val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy")
-        return currentDate.format(formatter)
+        val tvDate = findViewById<TextView>(R.id.date_text)
+        tvDate.text = getCurrentDate()
+
+        val tvGreeting = findViewById<TextView>(R.id.greeting_text)
+        tvGreeting.text = getGreetingMessage()
+
+        val pelangganMenu = findViewById<LinearLayout>(R.id.llPelanggan)
+        pelangganMenu.setOnClickListener {
+            val intent = Intent(this, DataPelangganActivity::class.java)
+            startActivity(intent)
+        }
+
+        val pegawaiMenu = findViewById<LinearLayout>(R.id.cvPegawai)
+        pegawaiMenu.setOnClickListener {
+            val intent = Intent(this, DataPegawaiActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getGreetingMessage(): String {
@@ -45,5 +56,11 @@ class MainActivity : AppCompatActivity() {
             currentTime.hour in 15..18 -> "Selamat Sore"
             else -> "Selamat Malam"
         }
+    }
+
+    private fun getCurrentDate(): String {
+        val currentDate = LocalDate.now()
+        val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy")
+        return currentDate.format(formatter)
     }
 }

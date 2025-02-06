@@ -27,4 +27,12 @@
     <string name="text_pegawai_tambah">Add Employee</string>
     <string name="text_tambahpegawai_cabang">Branch</string>
     <string name="hint_tambahpegawai_cabang">Branch</string>
+    <string name="text_tambahanpelanggan_cabang">Branch</string>
+    <string name="hint_tambahanpelanggan_cabang">Branch</string>
+    <string name="validasi_nama_pelanggan">Customer name cannot be empty</string>
+    <string name="validasi_alamat_pelanggan">The customer address cannot be empty</string>
+    <string name="validasi_no_hp_pelanggan">Customer mobile number cannot be empty</string>
+    <string name="validasi_cabang_pelanggan">Customer branches cannot be empty</string>
+    <string name="tambah_pelanggan_gagal">add_customer_failed</string>
+    <string name="tambah_pelanggan_sukses">add_customer_sukses</string>
 </resources>

@@ -27,4 +27,12 @@
     <string name="text_pegawai_tambah">Tambah Pegawai</string>
     <string name="text_tambahpegawai_cabang">Cabang</string>
     <string name="hint_tambahpegawai_cabang">Cabang</string>
+    <string name="text_tambahanpelanggan_cabang">Cabang</string>
+    <string name="hint_tambahanpelanggan_cabang">Cabang</string>
+    <string name="validasi_nama_pelanggan">Nama pelanggan tidak boleh kosong</string>
+    <string name="validasi_alamat_pelanggan">Alamat pelanggan tidak boleh kosong</string>
+    <string name="validasi_no_hp_pelanggan">Nomor HP pelanggan tidak bolej kosong</string>
+    <string name="validasi_cabang_pelanggan">Cabang pelanggan tidak boleh kosong</string>
+    <string name="tambah_pelanggan_gagal">tambah_pelanggan_gagal</string>
+    <string name="tambah_pelanggan_sukses">tambah_pelanggan_sukses</string>
 </resources>

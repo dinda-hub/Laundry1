@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".pelanggan.TambahanPelangganActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,6 +20,7 @@
             android:padding="16dp">
 
             <TextView
+                android:id="@+id/tvtambahpelanggan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -28,6 +30,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvnamalengkap_tambahanpelanggan"
                 android:layout_marginTop="25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -38,15 +41,17 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:layout_marginTop="10dp"
+                android:id="@+id/etnamalengkap_tambahanpelanggan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/hint_tambahanpelanggan_namalengkap"
                 android:padding="12dp" />
 
             <TextView
+                android:id="@+id/tvalamat_tambahanpelanggan"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -57,16 +62,18 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:layout_marginTop="10dp"
+                android:id="@+id/etalamat_tambahanpelanggan"
+                android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="10dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/hint_tambahanpelanggan_alamat"
                 android:padding="12dp" />
 
             <TextView
-                android:layout_marginTop="10dp"
+                android:id="@+id/tvhp_tambahanpelanggan"
+                android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -76,16 +83,40 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:layout_marginTop="10dp"
+                android:id="@+id/ethp_tambahanpelanggan"
+                android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="10dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/hint_tambahanpelanggan_nohpaktif"
                 android:inputType="phone"
                 android:padding="12dp" />
 
+            <TextView
+                android:id="@+id/tvcabang_tambahanpelanggan"
+                android:layout_marginTop="-10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:text="@string/text_tambahanpelanggan_cabang"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etcabang_tambahanpelanggan"
+                android:layout_marginTop="-10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@android:drawable/edit_text"
+                android:hint="@string/hint_tambahanpelanggan_cabang"
+                android:inputType="phone"
+                android:padding="12dp" />
+
             <Button
+                android:id="@+id/btsimpan_tambahanpelanggan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#e3dac9"

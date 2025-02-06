@@ -102,6 +102,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/llPelanggan"
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -264,6 +265,7 @@
                 android:layout_marginStart="0dp">
 
                 <LinearLayout
+                    android:id="@+id/cvPegawai"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"

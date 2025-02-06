@@ -100,6 +100,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/llPelanggan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -217,7 +218,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="-230dp"
+                android:layout_marginStart="-250dp"
                 android:backgroundTint="#808080">
 
                 <LinearLayout
@@ -278,6 +279,7 @@
                 android:backgroundTint="#808080">
 
                 <LinearLayout
+                    android:id="@+id/cvPegawai"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -302,7 +304,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="-230dp"
+                android:layout_marginStart="-250dp"
                 android:backgroundTint="#808080">
 
                 <LinearLayout
