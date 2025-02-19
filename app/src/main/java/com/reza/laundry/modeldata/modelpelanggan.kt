@@ -1,10 +1,12 @@
 package com.reza.laundry.modeldata
 
+import com.google.firebase.Timestamp
+
 class modelpelanggan (
-    val idPelanggan: String? = null,
-    val namaPelanggan: String? = null,
-    val alamatPelanggan: String? = null,
-    val noHPPelanggan: String? = null,
-    val idCabang: String? = null,
-    val terdaftar: String? = null
+    var idPelanggan: String? = null,
+    var namaPelanggan: String? = null,
+    var alamatPelanggan: String? = null,
+    var noHPPelanggan: String? = null,
+    var idCabang: String? = null,
+    var timestamp: String?=null
 )

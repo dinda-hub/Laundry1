@@ -113,7 +113,6 @@
                 android:layout_marginBottom="10dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/hint_tambahanpelanggan_cabang"
-                android:inputType="phone"
                 android:padding="12dp" />
 
             <Button

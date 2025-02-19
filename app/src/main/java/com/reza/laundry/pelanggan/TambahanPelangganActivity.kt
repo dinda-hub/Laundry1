@@ -33,6 +33,7 @@ class TambahanPelangganActivity : AppCompatActivity() {
         btSimpan.setOnClickListener{
             cekValidasi()
         }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tambah_pelanggan)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -90,15 +91,13 @@ class TambahanPelangganActivity : AppCompatActivity() {
             etNama.text.toString(),
             etAlamat.text.toString(),
             etNoHP.text.toString(),
-            etCabang.text.toString(),
+            etCabang.text.toString()
         )
-        pelangganBaru.setValue(data)
-            .addOnSuccessListener {
+        pelangganBaru.setValue(data).addOnSuccessListener {
                 Toast.makeText(
                     this,
                     this.getString(R.string.tambah_pelanggan_sukses),
-                    Toast.LENGTH_SHORT
-                )
+                    Toast.LENGTH_SHORT).show()
                 finish()
             }
             .addOnFailureListener {
@@ -106,7 +105,7 @@ class TambahanPelangganActivity : AppCompatActivity() {
                     this,
                     this.getString(R.string.tambah_pelanggan_gagal),
                     Toast.LENGTH_SHORT
-                )
+                ).show()
             }
-    }
+            }
 }

@@ -2,6 +2,9 @@ package com.reza
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,71 +14,66 @@ import androidx.core.view.WindowInsetsCompat
 import com.reza.laundry.R
 import com.reza.laundry.pegawai.DataPegawaiActivity
 import com.reza.laundry.pelanggan.DataPelangganActivity
+import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
+import java.util.Calendar
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
-    lateinit var tvDate: TextView
-    lateinit var tvGreeting : TextView
-    lateinit var cvPelanggan : CardView
-    lateinit var cvPegawai : CardView
+    lateinit var pelanggan1: ImageView
+    lateinit var pegawai1: CardView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         init()
-        pencet()
-        tvDate.text = getCurrentDate()
-        tvGreeting.text = getGreetingMessage()
+        tekan()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        
     }
 
-    fun init(){
-        tvDate=findViewById(R.id.date_text)
-        tvGreeting=findViewById(R.id.greeting_text)
-        cvPelanggan=findViewById(R.id.cvPelanggan)
-        cvPegawai=findViewById(R.id.cvPegawai)
+    fun init() {
+        pelanggan1 = findViewById(R.id.Pelanggan)
+        pegawai1 = findViewById(R.id.Pegawai)
+
     }
 
-    fun pencet(){
-        cvPelanggan.setOnClickListener{
-            val intent = Intent(this@MainActivity, DataPelangganActivity::class.java)
+    fun tekan() {
+        pelanggan1.setOnClickListener {
+            val intent = Intent(this, DataPelangganActivity::class.java)
             startActivity(intent)
         }
-        cvPegawai.setOnClickListener {
-            val intent = Intent(this@MainActivity, DataPegawaiActivity::class.java)
+
+        pegawai1.setOnClickListener {
+            val intent = Intent(this, DataPegawaiActivity::class.java)
             startActivity(intent)
         }
-    }
 
-    private fun getGreetingMessage(): String {
-        val currentTime = LocalTime.now()
-        return when {
-            currentTime.hour in 5..10 -> "Selamat Pagi"
-            currentTime.hour in 11..14 -> "Selamat Siang"
-            currentTime.hour in 15..18 -> "Selamat Sore"
-            else -> "Selamat Malam"
+        // Referensi TextView
+        val helloTextView = findViewById<View>(R.id.greeting_text) as TextView
+        val dateTextView = findViewById<View>(R.id.date_text) as TextView
+
+        // Mengatur tanggal hari ini
+        val calendar = Calendar.getInstance()
+        val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+        val currentDate = dateFormat.format(calendar.time)
+        dateTextView.text = currentDate
+
+        // Mengatur pesan berdasarkan waktu
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+        val greeting = when {
+            hour in 5..11 -> "Selamat Pagi, Dinda"
+            hour in 12..14 -> "Selamat Siang, Dinda"
+            hour in 15..17 -> "Selamat Sore, Dinda"
+            else -> "Selamat Malam, Dinda"
         }
-    }
-
-    private fun getCurrentDate(): String {
-        val currentDate = LocalDate.now()
-        val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy")
-        return currentDate.format(formatter)
-    }
-    
-    fun main(){
-        val tvGreeting = findViewById<TextView>(R.id.greeting_text)
-        tvGreeting.text = getGreetingMessage()
-        
-        val tvDate = findViewById<TextView>(R.id.date_text)
-        tvDate.text = getCurrentDate()
-        
+        helloTextView.text = greeting
     }
 }

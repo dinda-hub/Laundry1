@@ -4,7 +4,7 @@
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cvPelanggan"
+        android:id="@+id/datapelanggan"
         card_view:cardCornerRadius="8dp"
         card_view:cardElevation="4dp"
         android:layout_marginStart="8dp"
@@ -14,6 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/Pelanggan_Data"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -63,7 +64,7 @@
                 android:layout_marginBottom="14dp"/>
 
             <TextView
-                android:id="@+id/tv_terdaftar"
+                android:id="@+id/tv_terdaftar1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/card_pelanggan_terdaftar"
@@ -78,7 +79,7 @@
                 android:gravity="center">
 
                 <Button
-                    android:id="@+id/btn_hubungi"
+                    android:id="@+id/btn_hubungi1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -88,7 +89,7 @@
                     android:layout_marginEnd="8dp"/>
 
                 <Button
-                    android:id="@+id/btn_lihat"
+                    android:id="@+id/btn_lihat1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

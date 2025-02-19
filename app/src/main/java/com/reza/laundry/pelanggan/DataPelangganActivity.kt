@@ -21,9 +21,10 @@ class DataPelangganActivity : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("pelanggan")
     lateinit var rvDATA_PELANGGAN: RecyclerView
-    lateinit var fabDATA_PENGGUNA_TAMBAH: FloatingActionButton
+    lateinit var fabDATA_PENGGUNA_Tambah: FloatingActionButton
     lateinit var pelangganList: ArrayList<modelpelanggan>
 
+//    @SuppressLint("MissingInflatedId")
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,9 +38,12 @@ class DataPelangganActivity : AppCompatActivity() {
         layoutManager.stackFromEnd = true
         rvDATA_PELANGGAN.layoutManager=layoutManager
         rvDATA_PELANGGAN.setHasFixedSize(true)
-        pelangganList = arrayListOf()
+
+        pelangganList = arrayListOf<modelpelanggan>()
         getData()
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.cvPelanggan)) { v, insets ->
+        tekan()
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.Data_Pelanggan)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -48,7 +52,7 @@ class DataPelangganActivity : AppCompatActivity() {
 
     fun init(){
         rvDATA_PELANGGAN = findViewById(R.id.rvDATA_PELANGGAN)
-        fabDATA_PENGGUNA_TAMBAH = findViewById(R.id.fabDATA_PENGGUNA_Tambah)
+        fabDATA_PENGGUNA_Tambah = findViewById(R.id.fabDATA_PENGGUNA_Tambah)
     }
 
     fun getData() {
@@ -58,10 +62,9 @@ class DataPelangganActivity : AppCompatActivity() {
                 if (snapshot.exists()) {
                     pelangganList.clear()
                     for (dataSnapshot in snapshot.children) {
-                        val pelanggan = dataSnapshot.getValue(modelpelanggan::class.java)
-                        if (pelanggan != null) {  // Cek nullability agar tidak crash
-                            pelangganList.add(pelanggan)
-                        }
+                        val pegawai = dataSnapshot.getValue(modelpelanggan::class.java)
+                        pelangganList.add(pegawai!!)
+
                     }
                     val adapter = adapterdatapelanggan(pelangganList)
                     rvDATA_PELANGGAN.adapter = adapter
@@ -70,8 +73,17 @@ class DataPelangganActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@DataPelangganActivity, "Data Gagal Dimuat", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@DataPelangganActivity, error.message,Toast.LENGTH_SHORT).show()
             }
         })
+
+
+    }
+
+    fun tekan(){
+        fabDATA_PENGGUNA_Tambah.setOnClickListener {
+            val intent = Intent(this,TambahanPelangganActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
