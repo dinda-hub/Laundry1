@@ -1,5 +1,6 @@
 package com.reza.laundry.pelanggan
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -23,19 +24,22 @@ class DataPelangganActivity : AppCompatActivity() {
     lateinit var fabDATA_PENGGUNA_TAMBAH: FloatingActionButton
     lateinit var pelangganList: ArrayList<modelpelanggan>
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_data_pelanggan)
+
         init()
+
         val layoutManager = LinearLayoutManager(this)
         layoutManager.reverseLayout = true
         layoutManager.stackFromEnd = true
         rvDATA_PELANGGAN.layoutManager=layoutManager
         rvDATA_PELANGGAN.setHasFixedSize(true)
-        pelangganList = arrayListOf<modelpelanggan>()
+        pelangganList = arrayListOf()
         getData()
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.cvPelanggan)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -54,9 +58,9 @@ class DataPelangganActivity : AppCompatActivity() {
                 if (snapshot.exists()) {
                     pelangganList.clear()
                     for (dataSnapshot in snapshot.children) {
-                        val pegawai = dataSnapshot.getValue(modelpelanggan::class.java)
-                        if (pegawai != null) {  // Cek nullability agar tidak crash
-                            pelangganList.add(pegawai)
+                        val pelanggan = dataSnapshot.getValue(modelpelanggan::class.java)
+                        if (pelanggan != null) {  // Cek nullability agar tidak crash
+                            pelangganList.add(pelanggan)
                         }
                     }
                     val adapter = adapterdatapelanggan(pelangganList)

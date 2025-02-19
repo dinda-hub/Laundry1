@@ -100,7 +100,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/llPelanggan"
+                    android:id="@+id/Pelanggan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -272,6 +272,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/Pegawai"
                 android:layout_width="110dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
@@ -279,7 +280,6 @@
                 android:backgroundTint="#808080">
 
                 <LinearLayout
-                    android:id="@+id/cvPegawai"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"

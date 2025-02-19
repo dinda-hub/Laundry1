@@ -54,6 +54,15 @@
                 android:layout_marginBottom="8dp"/>
 
             <TextView
+                android:id="@+id/tv_cabang_pelanggan"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Cabang"
+                android:textSize="14dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="14dp"/>
+
+            <TextView
                 android:id="@+id/tv_terdaftar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
