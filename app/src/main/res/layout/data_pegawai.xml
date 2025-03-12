@@ -11,21 +11,28 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="10dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_id_pelanggan"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#a0a0a0"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/card_pegawai_ID_Pegawai"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
-
-            <TextView
-                android:id="@+id/tv_id_pegawai"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/card_pegawai_ID_Pegawai"
-                android:textStyle="italic"
-                android:textSize="14sp"
-                android:textColor="@android:color/darker_gray"
-                android:layout_marginBottom="4dp"/>
 
             <TextView
                 android:id="@+id/tv_nama_pegawai"
@@ -97,7 +104,7 @@
                     android:textColor="@android:color/white"/>
 
             </LinearLayout>
-
+        </LinearLayout>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

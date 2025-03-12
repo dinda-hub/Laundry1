@@ -94,7 +94,7 @@
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/hint_tambahanpelanggan_nohpaktif"
                 android:inputType="phone"
-                android:maxLines="14"
+                android:maxLength="14"
                 android:padding="12dp" />
 
             <TextView
