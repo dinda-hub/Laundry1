@@ -49,6 +49,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/hint_tambahanpelanggan_namalengkap"
+                android:inputType="textPersonName"
                 android:padding="12dp" />
 
             <TextView
@@ -70,11 +71,12 @@
                 android:layout_marginBottom="10dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/hint_tambahanpelanggan_alamat"
+                android:inputType="textPostalAddress"
                 android:padding="12dp" />
 
             <TextView
                 android:id="@+id/tvhp_tambahanpelanggan"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -92,11 +94,12 @@
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/hint_tambahanpelanggan_nohpaktif"
                 android:inputType="phone"
+                android:maxLines="14"
                 android:padding="12dp" />
 
             <TextView
                 android:id="@+id/tvcabang_tambahanpelanggan"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -110,16 +113,17 @@
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="24dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/hint_tambahanpelanggan_cabang"
+                android:inputType="text"
                 android:padding="12dp" />
 
             <Button
                 android:id="@+id/btsimpan_tambahanpelanggan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#e3dac9"
+                android:backgroundTint="#778899"
                 android:padding="12dp"
                 android:text="@string/text_tambahanpelanggan_simpan"
                 android:textColor="@android:color/white" />
