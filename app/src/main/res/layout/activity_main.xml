@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Selamat Pagi, Dinda"
         android:layout_marginTop="40dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="24 Januari 2025"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/greeting_text"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +35,8 @@
         android:id="@+id/estimasi_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
         android:layout_marginTop="16dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
@@ -150,7 +152,7 @@
         android:layout_height="wrap_content"
         android:text="Siap melayani pelanggan dengan setulus hati"
         android:textSize="16sp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/estimasi_card"
         app:layout_constraintStart_toStartOf="parent"
@@ -161,7 +163,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Jangan Kecewakan Pelanggan"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@+id/reminder_text"
         app:layout_constraintStart_toStartOf="parent" />
@@ -187,8 +189,10 @@
 
             <!-- Card 1 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/akun"
                 android:layout_width="110dp"
                 android:layout_height="100dp"
+                android:layout_marginStart="16dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:backgroundTint="#808080">
@@ -219,9 +223,8 @@
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:id="@+id/layanan"
-                android:layout_marginStart="-250dp"
+                android:layout_marginStart="-247dp"
                 android:backgroundTint="#808080">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -243,6 +246,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/tambahan"
                 android:layout_width="110dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
@@ -276,6 +280,7 @@
                 android:id="@+id/Pegawai"
                 android:layout_width="110dp"
                 android:layout_height="100dp"
+                android:layout_marginStart="16dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:backgroundTint="#808080">
@@ -301,11 +306,12 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cabang"
                 android:layout_width="110dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="-250dp"
+                android:layout_marginStart="-247dp"
                 android:backgroundTint="#808080">
 
                 <LinearLayout
@@ -329,6 +335,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/printer"
                 android:layout_width="110dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"

@@ -35,4 +35,5 @@
     <string name="validasi_cabang_pelanggan">Customer branches cannot be empty</string>
     <string name="tambah_pelanggan_gagal">add_customer_failed</string>
     <string name="tambah_pelanggan_sukses">add_customer_sukses</string>
+    <string name="text_selamatpagi">Good Morning</string>
 </resources>

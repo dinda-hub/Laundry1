@@ -35,4 +35,5 @@
     <string name="validasi_cabang_pelanggan">Cabang pelanggan tidak boleh kosong</string>
     <string name="tambah_pelanggan_gagal">tambah_pelanggan_gagal</string>
     <string name="tambah_pelanggan_sukses">tambah_pelanggan_sukses</string>
+    <string name="text_selamatpagi">Selamat Pagi</string>
 </resources>
