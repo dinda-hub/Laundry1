@@ -7,6 +7,6 @@ class modelpelanggan (
     var namaPelanggan: String? = null,
     var alamatPelanggan: String? = null,
     var noHPPelanggan: String? = null,
-    var idCabang: String? = null,
+    var idCabangPelanggan: String? = null,
     var timestamp: String?=null
 )

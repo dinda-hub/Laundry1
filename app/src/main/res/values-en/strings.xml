@@ -33,8 +33,14 @@
     <string name="validasi_alamat_pelanggan">The customer address cannot be empty</string>
     <string name="validasi_no_hp_pelanggan">Customer mobile number cannot be empty</string>
     <string name="validasi_cabang_pelanggan">Customer branches cannot be empty</string>
-    <string name="tambah_pelanggan_gagal">add_customer_failed</string>
-    <string name="tambah_pelanggan_sukses">add_customer_sukses</string>
+    <string name="tambah_pelanggan_gagal">Add Customers Failed</string>
+    <string name="tambah_pelanggan_sukses">Add Customers Success</string>
     <string name="text_selamatpagi">Good Morning</string>
     <string name="text_datapelanggan_cabang">Branch</string>
+    <string name="validasi_nama_pegawai">Employee name cannot be empty</string>
+    <string name="validasi_alamat_pegawai">The costumer address cannot be empty</string>
+    <string name="validasi_no_hp_pegawai">Employee mobile number cannot be empty</string>
+    <string name="validasi_cabang_pegawai">Employee branches cannot be empty</string>
+    <string name="tambah_pegawai_sukses">Add Employee Success</string>
+    <string name="tambah_pegawai_gagal">Add Employee Failed</string>
 </resources>

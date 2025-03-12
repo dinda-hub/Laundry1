@@ -20,6 +20,7 @@
             android:padding="16dp">
 
             <TextView
+                android:id="@+id/tvJudulPegawai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -29,6 +30,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvnamalengkap_tambahanpegawai"
                 android:layout_marginTop="25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,6 +41,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/etnamalengkap_tambahanpegawai"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,6 +52,7 @@
                 android:padding="12dp" />
 
             <TextView
+                android:id="@+id/tvalamat_tambahanpegawai"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,6 +63,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/etalamat_tambahanpegawai"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -69,6 +74,7 @@
                 android:padding="12dp" />
 
             <TextView
+                android:id="@+id/tvhp_tambahanpegawai"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,6 +85,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/ethp_tambahanpegawai"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -86,10 +93,11 @@
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/hint_tambahanpelanggan_nohpaktif"
                 android:inputType="phone"
-                android:maxLines="14"
+                android:maxLength="14"
                 android:padding="12dp" />
 
             <TextView
+                android:id="@+id/tvcabang_tambahanpegawai"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,6 +108,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/etcabang_tambahanpegawai"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,6 +119,7 @@
                 android:padding="12dp" />
 
             <Button
+                android:id="@+id/btsimpan_tambahanpegawai"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#778899"

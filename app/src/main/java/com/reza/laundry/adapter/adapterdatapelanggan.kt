@@ -28,7 +28,7 @@ class adapterdatapelanggan(private val listPelanggan: ArrayList<modelpelanggan>)
         holder.tvCARD_PELANGGAN_NAMA.text = pelanggan.namaPelanggan
         holder.tvCARD_PELANGGAN_ALAMAT.text = pelanggan.alamatPelanggan
         holder.tvCARD_PELANGGAN_NOHP.text = pelanggan.noHPPelanggan
-        holder.tvCARD_PELANGGAN_CABANG.text = pelanggan.idCabang
+        holder.tvCARD_PELANGGAN_CABANG.text = pelanggan.idCabangPelanggan
         holder.cardPelanggan.setOnClickListener {
 
         }
@@ -48,10 +48,10 @@ class adapterdatapelanggan(private val listPelanggan: ArrayList<modelpelanggan>)
         val cardPelanggan = itemView.findViewById<View>(R.id.datapelanggan)
         val tvCARD_PELANGGAN_ID = itemView.findViewById<TextView>(R.id.tv_id_pelanggan)
         val tvCARD_PELANGGAN_NAMA = itemView.findViewById<TextView>(R.id.tv_nama_pelanggan)
-        val tvCARD_PELANGGAN_ALAMAT = itemView.findViewById<TextView>(R.id.tv_alamat)
+        val tvCARD_PELANGGAN_ALAMAT = itemView.findViewById<TextView>(R.id.tv_alamat_pelanggan)
         val tvCARD_PELANGGAN_NOHP = itemView.findViewById<TextView>(R.id.tv_no_hp_pelanggan)
         val tvCARD_PELANGGAN_CABANG = itemView.findViewById<TextView>(R.id.tv_cabang_pelanggan)
-        val lihat = itemView.findViewById<Button>(R.id.btn_lihat1)
-        val hubungi = itemView.findViewById<Button>(R.id.btn_hubungi1)
+        val lihat = itemView.findViewById<Button>(R.id.btn_lihat1_pelanggan)
+        val hubungi = itemView.findViewById<Button>(R.id.btn_hubungi1_pelanggan)
     }
 }

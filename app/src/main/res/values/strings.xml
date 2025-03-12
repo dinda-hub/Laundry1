@@ -36,4 +36,10 @@
     <string name="tambah_pelanggan_gagal">tambah_pelanggan_gagal</string>
     <string name="text_selamatpagi">Selamat Pagi</string>
     <string name="text_datapelanggan_cabang">Cabang</string>
+    <string name="validasi_nama_pegawai">Nama Pegawai tidak boleh kosong</string>
+    <string name="validasi_alamat_pegawai">Alamat pegawai tidak boleh kosong</string>
+    <string name="validasi_no_hp_pegawai">Nomor HP pegawai tidak boleh kosong</string>
+    <string name="validasi_cabang_pegawai">Cabang pegawai tidak boleh kosong</string>
+    <string name="tambah_pegawai_sukses">tambah_pegawai_sukses</string>
+    <string name="tambah_pegawai_gagal">tambah_pegawai_gagal</string>
 </resources>

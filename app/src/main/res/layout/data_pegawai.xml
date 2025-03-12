@@ -17,7 +17,7 @@
         android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_id_pelanggan"
+        android:id="@+id/tv_id_pegawai"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="#a0a0a0"
@@ -44,7 +44,7 @@
                 android:layout_marginBottom="4dp"/>
 
             <TextView
-                android:id="@+id/tv_alamat"
+                android:id="@+id/tv_alamat_pegawai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/card_pegawai_alamat"
@@ -52,7 +52,7 @@
                 android:layout_marginBottom="2dp"/>
 
             <TextView
-                android:id="@+id/tv_no_hp"
+                android:id="@+id/tv_no_hp_pegawai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/card_pegawai_No_HP"
@@ -70,7 +70,7 @@
                 android:layout_marginBottom="14dp"/>
 
             <TextView
-                android:id="@+id/tv_cabang"
+                android:id="@+id/tv_cabang_pegawai"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/card_pegawai_cabang"
@@ -85,7 +85,7 @@
                 android:gravity="center">
 
                 <Button
-                    android:id="@+id/btn_hubungi"
+                    android:id="@+id/btn_hubungi_pegawai"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -95,7 +95,7 @@
                     android:layout_marginEnd="8dp"/>
 
                 <Button
-                    android:id="@+id/btn_lihat"
+                    android:id="@+id/btn_lihat_pegawai"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
