@@ -1,5 +1,6 @@
 package com.reza.laundry.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,10 +8,14 @@ import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.reza.laundry.R
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
+import com.google.firebase.database.core.Context
 import com.reza.laundry.modeldata.modelpegawai
+import com.reza.laundry.pegawai.TambahanPegawaiActivity
 
 class adapterdatapegawai (private val listPegawai: ArrayList<modelpegawai>) :
     RecyclerView.Adapter<adapterdatapegawai.ViewHolder>() {
+        lateinit var appContext: Context
 
     override  fun onCreateViewHolder(
         parent: ViewGroup,
@@ -38,7 +43,19 @@ class adapterdatapegawai (private val listPegawai: ArrayList<modelpegawai>) :
         holder.hubungi.setOnClickListener{
 
         }
+        holder.cardPegawai.setOnClickListener {
+            val intent = Intent(appContext, TambahanPegawaiActivity::class.java)
+            intent.putExtra("Judul", "Edit Pegawai")
+            intent.putExtra("idPegawai", pelanggan.idPegawai)
+            intent.putExtra("namaPegawai", pelanggan.namaPegawai)
+            intent.putExtra("noHPPegawai", pelanggan.noHPPegawai)
+            intent.putExtra("alamatPegawai", pelanggan.alamatPegawai)
+            intent.putExtra("idCabang", pelanggan.idCabangPegawai)
+            startActivity(intent)
+        }
     }
+
+
 
     override fun getItemCount(): Int {
         return listPegawai.size
