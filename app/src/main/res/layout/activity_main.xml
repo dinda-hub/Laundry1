@@ -190,9 +190,9 @@
             <!-- Card 1 -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/akun"
-                android:layout_width="110dp"
+                android:layout_width="113dp"
                 android:layout_height="100dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:backgroundTint="#808080">
@@ -218,12 +218,12 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="110dp"
+                android:layout_width="113dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:id="@+id/layanan"
-                android:layout_marginStart="-247dp"
+                android:layout_marginStart="-249dp"
                 android:backgroundTint="#808080">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -247,7 +247,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/tambahan"
-                android:layout_width="110dp"
+                android:layout_width="113dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
@@ -278,9 +278,9 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/Pegawai"
-                android:layout_width="110dp"
+                android:layout_width="113dp"
                 android:layout_height="100dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:backgroundTint="#808080">
@@ -307,11 +307,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cabang"
-                android:layout_width="110dp"
+                android:layout_width="113dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="-247dp"
+                android:layout_marginStart="-249dp"
                 android:backgroundTint="#808080">
 
                 <LinearLayout
@@ -336,7 +336,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/printer"
-                android:layout_width="110dp"
+                android:layout_width="113dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"

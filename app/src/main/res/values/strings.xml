@@ -42,4 +42,6 @@
     <string name="validasi_cabang_pegawai">Cabang pegawai tidak boleh kosong</string>
     <string name="tambah_pegawai_sukses">tambah_pegawai_sukses</string>
     <string name="tambah_pegawai_gagal">tambah_pegawai_gagal</string>
+    <string name="tambah_pegawai">Tambah Pegawai</string>
+    <string name="edit_pegawai">Edit Pegawai</string>
 </resources>

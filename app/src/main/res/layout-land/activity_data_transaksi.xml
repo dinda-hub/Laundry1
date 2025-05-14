@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9FC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Baris Header: Data Pelanggan & Layanan Tambahan -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Data Pelanggan"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#333333"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Layanan Tambahan"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:gravity="end"
+                android:textColor="#333333"/>
+        </LinearLayout>
+
+        <!-- Data Pelanggan -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Pelanggan:"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No HP:"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginTop="4dp"/>
+
+        <Button
+            android:id="@+id/btnlandPilihPelanggan"
+            android:layout_width="300"
+            android:layout_height="48dp"
+            android:text="Pilih Pelanggan"
+            android:textAllCaps="false"
+            android:backgroundTint="#00BFFF"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Layanan Utama -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Layanan Utama"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#333333"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Layanan:"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harga:"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginTop="4dp"/>
+
+        <Button
+            android:id="@+id/btnlandPilihLayanan"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:text="Pilih Layanan"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#00BFFF"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Spacer untuk scroll -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <!-- Tombol Bawah -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="24dp">
+
+            <Button
+                android:id="@+id/btnlandTambahan"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:text="Tambahan"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#FFD700"/>
+
+            <Button
+                android:id="@+id/btnlandProses"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:text="Proses"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#32CD32"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

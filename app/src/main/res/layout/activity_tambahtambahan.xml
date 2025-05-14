@@ -20,39 +20,39 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/tvJudulLayanan"
+                android:id="@+id/tvJudulTambahan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Tambah Layanan"
+                android:text="Tambah Tambahan"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvnamalayanan"
+                android:id="@+id/tvnamatambahan"
                 android:layout_marginTop="25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Nama Layanan"
+                android:text="Nama Tambahan"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etnamalayanan"
+                android:id="@+id/etnamatambahan"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:inputType="textPersonName"
                 android:background="@android:drawable/edit_text"
-                android:hint="Nama Layanan"
+                android:hint="Nama Tambahan"
                 android:padding="12dp" />
 
             <TextView
-                android:id="@+id/tvharga"
+                android:id="@+id/tvtambahan_harga"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,18 +63,19 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etharga"
+                android:id="@+id/ettambahanharga"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:inputType="textPostalAddress"
                 android:background="@android:drawable/edit_text"
                 android:hint="Harga"
+                android:inputType="phone"
+                android:maxLength="14"
                 android:padding="12dp" />
 
             <TextView
-                android:id="@+id/tvcabang_tambahanlayanan"
+                android:id="@+id/tvtambahan_cabang"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,19 +86,19 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etcabang_tambahanlayanan"
+                android:id="@+id/ettambahan_cabang"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:background="@android:drawable/edit_text"
-                android:hint="Cabang"
+                android:hint="Nama Cabang"
                 android:inputType="phone"
                 android:maxLength="14"
                 android:padding="12dp" />
 
             <Button
-                android:id="@+id/btsimpan_tambahanlayanan"
+                android:id="@+id/btsimpan_tambahanpegawai"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#778899"

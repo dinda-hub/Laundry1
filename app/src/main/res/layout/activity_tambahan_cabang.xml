@@ -20,84 +20,85 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/tvJudulLayanan"
+                android:id="@+id/tvJudulCabang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Tambah Layanan"
+                android:text="Tambah Cabang"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvnamalayanan"
+                android:id="@+id/tvnamacabang"
                 android:layout_marginTop="25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Nama Layanan"
+                android:text="Nama Cabang"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etnamalayanan"
+                android:id="@+id/etnamacabang"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:inputType="textPersonName"
                 android:background="@android:drawable/edit_text"
-                android:hint="Nama Layanan"
+                android:hint="Nama Cabang"
                 android:padding="12dp" />
 
             <TextView
-                android:id="@+id/tvharga"
+                android:id="@+id/tvcabang_alamat"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Harga"
+                android:text="Alamat"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etharga"
+                android:id="@+id/etcabang_alamat"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:inputType="textPostalAddress"
                 android:background="@android:drawable/edit_text"
-                android:hint="Harga"
+                android:hint="Alamat"
+                android:inputType="phone"
+                android:maxLength="14"
                 android:padding="12dp" />
 
             <TextView
-                android:id="@+id/tvcabang_tambahanlayanan"
+                android:id="@+id/tvcabang_nohp"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Cabang"
+                android:text="No HP"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etcabang_tambahanlayanan"
+                android:id="@+id/etcabang_nohp"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:background="@android:drawable/edit_text"
-                android:hint="Cabang"
+                android:hint="No HP"
                 android:inputType="phone"
                 android:maxLength="14"
                 android:padding="12dp" />
 
             <Button
-                android:id="@+id/btsimpan_tambahanlayanan"
+                android:id="@+id/btsimpan_tambahanpegawai"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#778899"

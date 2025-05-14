@@ -38,7 +38,7 @@ class TambahanPegawaiActivity : AppCompatActivity() {
 
     fun getData(){
         idPegawai = intent.getStringExtra("idPegawai").toString()
-        val judul = intent.getStringExtra("judul")
+        val judul = intent.getStringExtra("JudulPegawai")
         val nama = intent.getStringExtra("namaPegawai")
         val alamat = intent.getStringExtra("alamatPegawai")
         val noHP = intent.getStringExtra("noHPPegawai")
@@ -48,8 +48,8 @@ class TambahanPegawaiActivity : AppCompatActivity() {
         etAlamat.setText(alamat)
         etNoHP.setText(noHP)
         etCabang.setText(cabang)
-        if(tvJudul.text.equals("Edit Pegawai")){
-            if (judul.equals("Edit Pegawai")) {
+        if(tvJudul.text.equals(this.getString(R.string.tambah_pegawai))){
+            if (judul.equals(this.getString(R.string.edit_pegawai))) {
                 mati()
                 btSimpan.text = "Sunting"
             }else{

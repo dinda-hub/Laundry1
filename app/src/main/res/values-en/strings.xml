@@ -43,4 +43,6 @@
     <string name="validasi_cabang_pegawai">Employee branches cannot be empty</string>
     <string name="tambah_pegawai_sukses">Add Employee Success</string>
     <string name="tambah_pegawai_gagal">Add Employee Failed</string>
+    <string name="tambah_pegawai">Add Employee</string>
+    <string name="edit_pegawai">Edit Employee</string>
 </resources>
