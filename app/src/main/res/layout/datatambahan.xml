@@ -2,9 +2,9 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/datacabang"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/datatambahan"
     card_view:cardCornerRadius="8dp"
     card_view:cardElevation="4dp"
     android:layout_marginStart="8dp"
@@ -17,14 +17,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvidCabang"
+            android:id="@+id/tv_id_tambahan"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="#a0a0a0"
             android:gravity="center_vertical"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:text="ID Cabang"
+            android:text="ID Tambahan"
             android:textColor="#FFFFFF"
             android:textSize="16sp"/>
 
@@ -35,57 +35,30 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/tvnamadatacabang"
+                android:id="@+id/namatambahan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Cabang"
+                android:text="Nama Tambahan"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="4dp"/>
 
             <TextView
-                android:id="@+id/tvalamatdatacabang"
+                android:id="@+id/hargatambahan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Alamat"
+                android:text="Harga"
                 android:textSize="14sp"
-                android:layout_marginBottom="2dp"/>
+                android:layout_marginBottom="4dp"/>>
 
             <TextView
-                android:id="@+id/tvnohpdatacabang"
+                android:id="@+id/cabangtambahan"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="No HP"
+                android:text="Cabang"
                 android:textSize="14dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="14dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/btnhubungidatalayanan"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Hubungi"
-                    android:backgroundTint="#B0C4DE"
-                    android:textColor="@android:color/white"
-                    android:layout_marginEnd="8dp"/>
-
-                <Button
-                    android:id="@+id/btnlihatdatalayanan"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Lihat"
-                    android:backgroundTint="#778899"
-                    android:textColor="@android:color/white"/>
-
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

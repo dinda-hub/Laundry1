@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.reza.laundry.R
 import com.reza.laundry.pegawai.DataPegawaiActivity
 import com.reza.laundry.pelanggan.DataPelangganActivity
+import com.reza.laundry.transaksi.DataTransaksiActivity
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.LocalTime
@@ -24,7 +25,7 @@ import java.util.Locale
 class MainActivity : AppCompatActivity() {
     lateinit var pelanggan1: ImageView
     lateinit var pegawai1: CardView
-
+    lateinit var transaksi: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     fun init() {
         pelanggan1 = findViewById(R.id.Pelanggan)
         pegawai1 = findViewById(R.id.Pegawai)
-
+        transaksi = findViewById(R.id.transaksi)
     }
 
     fun tekan() {
@@ -53,6 +54,11 @@ class MainActivity : AppCompatActivity() {
 
         pegawai1.setOnClickListener {
             val intent = Intent(this, DataPegawaiActivity::class.java)
+            startActivity(intent)
+        }
+
+        transaksi.setOnClickListener {
+            val intent = Intent(this, DataTransaksiActivity::class.java)
             startActivity(intent)
         }
 
