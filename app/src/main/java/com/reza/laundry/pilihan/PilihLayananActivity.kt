@@ -165,7 +165,7 @@ class PilihLayananActivity : AppCompatActivity() {
                 Log.e(TAG, "Database error: ${error.message}")
                 tvKosong.visibility = View.VISIBLE
                 tvKosong.text = "Error: ${error.message}"
-                Toast.makeText(this@PilihLayananctivity, "Error: ${error.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@PilihLayananActivity, "Error: ${error.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }

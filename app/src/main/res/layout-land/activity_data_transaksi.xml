@@ -44,7 +44,7 @@
             android:layout_marginTop="15dp"/>
 
         <TextView
-            android:id="@+id/tvNoHP"
+            android:id="@+id/tvpilihpelangganNoHP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No HP:"
@@ -79,7 +79,7 @@
             android:layout_marginTop="15dp"/>
 
         <TextView
-            android:id="@+id/tvHarga"
+            android:id="@+id/tvpilihlayananHarga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Harga:"
@@ -144,7 +144,7 @@
                 android:layout_margin="4dp"/>
 
             <Button
-                android:id="@+id/btnProses"
+                android:id="@+id/btnProsesTransaksi"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
