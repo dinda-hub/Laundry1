@@ -13,13 +13,13 @@ class adapterdatatambahan (
 ) : RecyclerView.Adapter<adapterdatatambahan.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nama: TextView = itemView.findViewById(R.id.tv_nama_tambahan)
-        val harga: TextView = itemView.findViewById(R.id.tv_harga_tambahan)
+        val nama: TextView = itemView.findViewById(R.id.namatambahan)
+        val harga: TextView = itemView.findViewById(R.id.hargatambahan)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_data_tambahan, parent, false)
+            .inflate(R.layout.datatambahan, parent, false)
         return ViewHolder(view)
     }
 

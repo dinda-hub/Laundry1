@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:id="@+id/main"
+    android:id="@+id/data_transaksi"
     android:background="#FFF9FC">
 
     <!-- DATA PELANGGAN -->

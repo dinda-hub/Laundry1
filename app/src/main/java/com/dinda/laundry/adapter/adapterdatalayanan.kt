@@ -1,6 +1,7 @@
 package com.dinda.laundry.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,16 +34,33 @@ class adapterdatalayanan (private val layananList: ArrayList<modellayanan>) :
     override fun onBindViewHolder(holder: LayananViewHolder, position: Int) {
         val currentLayanan = layananList[position]
 
-        // Set data to views
+        // DEBUG: Log semua data yang diterima
+        Log.d("AdapterDebug", "=== Item ke-$position ===")
+        Log.d("AdapterDebug", "ID Layanan: ${currentLayanan.idLayanan}")
+        Log.d("AdapterDebug", "Nama Layanan: ${currentLayanan.namaLayanan}")
+        Log.d("AdapterDebug", "Harga: ${currentLayanan.hargaLayanan}")
+        Log.d("AdapterDebug", "Cabang: '${currentLayanan.cabangLayanan}'")
+        Log.d("AdapterDebug", "Cabang null? ${currentLayanan.cabangLayanan == null}")
+        Log.d("AdapterDebug", "Cabang empty? ${currentLayanan.cabangLayanan?.isEmpty()}")
+
+        // Set data to views dengan pengecekan null yang lebih detail
         holder.tvIdLayanan.text = currentLayanan.idLayanan ?: "ID tidak tersedia"
         holder.tvNamaLayanan.text = currentLayanan.namaLayanan ?: "Nama tidak tersedia"
         holder.tvHargaLayanan.text = "Rp ${currentLayanan.hargaLayanan ?: "0"}"
-        holder.tvCabangLayanan.text = "Cabang: ${currentLayanan.CabangLayanan ?: "Tidak diketahui"}"
+
+        // Pengecekan cabang yang lebih detail
+        val cabangText = when {
+            currentLayanan.cabangLayanan.isNullOrEmpty() -> "Cabang tidak diketahui"
+            else -> "Cabang: ${currentLayanan.cabangLayanan}"
+        }
+        holder.tvCabangLayanan.text = cabangText
+
+        // DEBUG: Log text yang di-set ke TextView
+        Log.d("AdapterDebug", "Text yang di-set ke TextView Cabang: '$cabangText'")
 
         // Set click listeners
         holder.btnHubungi.setOnClickListener {
             Toast.makeText(holder.itemView.context, "Menghubungi layanan ${currentLayanan.namaLayanan}", Toast.LENGTH_SHORT).show()
-            // Implementasi hubungi di sini (misalnya buka WhatsApp, telepon, dll)
         }
 
         holder.btnLihat.setOnClickListener {
@@ -52,12 +70,11 @@ class adapterdatalayanan (private val layananList: ArrayList<modellayanan>) :
                 putExtra("JudulLayanan", "Edit Layanan")
                 putExtra("namaLayanan", currentLayanan.namaLayanan)
                 putExtra("harga", currentLayanan.hargaLayanan)
-                putExtra("idCabangLayanan", currentLayanan.CabangLayanan)
+                putExtra("idCabangLayanan", currentLayanan.cabangLayanan)
             }
             context.startActivity(intent)
         }
 
-        // Optional: Set click listener for the entire card
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, TambahanLayananActivity::class.java).apply {
@@ -65,7 +82,7 @@ class adapterdatalayanan (private val layananList: ArrayList<modellayanan>) :
                 putExtra("JudulLayanan", "Detail Layanan")
                 putExtra("namaLayanan", currentLayanan.namaLayanan)
                 putExtra("harga", currentLayanan.hargaLayanan)
-                putExtra("idCabangLayanan", currentLayanan.CabangLayanan)
+                putExtra("idCabangLayanan", currentLayanan.cabangLayanan)
             }
             context.startActivity(intent)
         }

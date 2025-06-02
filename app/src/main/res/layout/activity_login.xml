@@ -18,43 +18,45 @@
             android:src="@drawable/mesincuci2" />
 
         <TextView
+            android:id="@+id/tvselamatdatang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Selamat Datang"
+            android:text="@string/selamatdatanglogin"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF" />
 
         <TextView
+            android:id="@+id/tvSilahkanLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Silakan Login Untuk Melanjutkan"
+            android:text="@string/silahkan_login"
             android:textColor="#FFFFFF"
             android:layout_marginBottom="24dp" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/etnohplogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="No HP"
+            android:hint="@string/nohp"
             android:inputType="phone"
             android:backgroundTint="#778899"
             android:layout_marginBottom="16dp" />
 
         <EditText
-            android:id="@+id/editTextPassword"
+            android:id="@+id/etkatasandilogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/katasandi"
             android:inputType="textPassword"
             android:backgroundTint="#778899"
             android:layout_marginBottom="24dp" />
 
         <Button
-            android:id="@+id/buttonLogin"
+            android:id="@+id/btmasuk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/masuk"
             android:backgroundTint="#778899"
             android:textColor="#FFFFFF" />
 
