@@ -5,7 +5,7 @@
     android:id="@+id/Data_CABANG"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.reza.laundry.cabang.DataCabangActivity">
+    tools:context="com.dinda.laundry.cabang.DataCabangActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDATA_CABANG"
@@ -20,7 +20,7 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/fabDATA_LAYANAN_Tambah"
+            android:id="@+id/fabDATA_CABANG_Tambah"
             android:src="@drawable/plus"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"

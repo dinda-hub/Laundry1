@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cvcardlayanan"
+    android:id="@+id/cvcardlayanantambah"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardCornerRadius="8dp"
@@ -18,11 +18,11 @@
 
         <!-- Header -->
         <TextView
-            android:id="@+id/tvcardpilihanlayanan"
+            android:id="@+id/tvcardpilihanlayanantambahan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#778899"
-            android:text="[1]"
+            android:background="#a0a0a0"
+            android:text="[4]"
             android:textColor="#FFFFFF"
             android:padding="8dp"
             android:textStyle="bold" />
@@ -35,19 +35,19 @@
             android:padding="12dp">
 
             <TextView
-                android:id="@+id/namapilihlayanan"
+                android:id="@+id/namapilihlayanantambah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cuci Basah 8 KG"
+                android:text="Pewangi Aroma Terapi"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:layout_marginBottom="4dp" />
 
             <TextView
-                android:id="@+id/hargapilihanlayanan"
+                android:id="@+id/hargapilihanlayanantambah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Harga : 25.000,00" />
+                android:text="Harga : 6.000,00" />
         </LinearLayout>
     </LinearLayout>
 

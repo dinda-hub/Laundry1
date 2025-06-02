@@ -82,7 +82,7 @@
                 android:weightSum="3">
 
                 <LinearLayout
-                    android:id="@+id/transaksi"
+                    android:id="@+id/Transaksi"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -103,6 +103,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/Pelanggan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -110,7 +111,6 @@
                     android:gravity="center">
 
                     <ImageView
-                        android:id="@+id/Pelanggan"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:src="@drawable/target" />
@@ -125,6 +125,7 @@
 
                 <!-- Icon 3 -->
                 <LinearLayout
+                    android:id="@+id/Laporan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -247,7 +248,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/tambahan"
+                android:id="@+id/Tambahan"
                 android:layout_width="113dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"

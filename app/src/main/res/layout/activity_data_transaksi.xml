@@ -20,7 +20,7 @@
         android:layout_marginStart="12dp"/>
 
     <TextView
-        android:id="@+id/namapelanggantransaksi"
+        android:id="@+id/tvNamaPelanggan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Pelanggan:"
@@ -30,14 +30,14 @@
         android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/nohptransaksi"
+        android:id="@+id/tvpilihpelangganNoHP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No HP:"
-        android:textSize="18sp"
-        android:textColor="#000000"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"/>
+        android:layout_marginTop="4dp"
+        android:text="No HP:"
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btnPilihPelanggan"
@@ -65,7 +65,7 @@
         android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/namalayanantransaksi"
+        android:id="@+id/tvNamaLayanan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Layanan:"
@@ -75,7 +75,7 @@
         android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/hargatransaksi"
+        android:id="@+id/tvpilihlayananHarga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Harga:"
@@ -108,9 +108,9 @@
         android:textColor="#333333"
         android:layout_marginTop="8dp"/>
 
-    <!-- Spacer -->
+    <!-- RecyclerView untuk Layanan Tambahan -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerLayananTambahan"
+        android:id="@+id/rvLayananTambahan"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -129,7 +129,7 @@
         android:layout_marginBottom="8dp">
 
         <Button
-            android:id="@+id/btnTambahantransaksi"
+            android:id="@+id/btnTambahan"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"

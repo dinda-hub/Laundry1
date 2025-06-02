@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/tambah_pegawai"
+    android:id="@+id/tambah_tambahan"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -74,31 +74,8 @@
                 android:maxLength="14"
                 android:padding="12dp" />
 
-            <TextView
-                android:id="@+id/tvtambahan_cabang"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="24dp"
-                android:text="Cabang"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/ettambahan_cabang"
-                android:layout_marginTop="-10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@android:drawable/edit_text"
-                android:hint="Nama Cabang"
-                android:inputType="phone"
-                android:maxLength="14"
-                android:padding="12dp" />
-
             <Button
-                android:id="@+id/btsimpan_tambahanpegawai"
+                android:id="@+id/btsimpan_tambahtambahan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#778899"

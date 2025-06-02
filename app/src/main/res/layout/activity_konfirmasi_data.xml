@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_konfirmasi"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- Judul -->
+    <TextView
+        android:id="@+id/tv_judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Konfirmasi Data"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Nama Pelanggan -->
+    <TextView
+        android:id="@+id/tv_nama_pelanggan_konfirmasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_judul"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- No HP -->
+    <TextView
+        android:id="@+id/tv_no_hp_konfirmasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No HP"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_nama_pelanggan_konfirmasi"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Layanan -->
+    <TextView
+        android:id="@+id/tv_nama_layanan_konfirmasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Layanan"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_no_hp_konfirmasi"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Harga Layanan -->
+    <TextView
+        android:id="@+id/tv_harga_layanan_konfirmasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp.0"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_nama_layanan_konfirmasi"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Label Tambahan -->
+    <TextView
+        android:id="@+id/tv_label_tambahan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Layanan Tambahan"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_harga_layanan_konfirmasi"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp" />
+
+    <!-- RecyclerView Tambahan -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tambahan_konfirmasi"
+        android:layout_width="0dp"
+        android:layout_height="266dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_tambahan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Total Bayar -->
+    <LinearLayout
+        android:id="@+id/layout_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/rv_tambahan_konfirmasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="325dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Bayar"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_total_bayar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp0,00"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- Tombol Aksi -->
+    <LinearLayout
+        android:id="@+id/layout_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btn_batal_konfirmasidata"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Batal"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:textColor="@android:color/white"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/btn_pembayaran_konfirmasidata"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pembayaran"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:textColor="@android:color/white"
+            android:layout_margin="8dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -102,7 +102,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/llPelanggan"
+                android:id="@+id/Pelanggan"
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -171,7 +171,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="110dp"
-                android:layout_height="100dp"
+                android:layout_height="118dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:backgroundTint="#808080"
@@ -202,7 +202,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="110dp"
-                android:layout_height="100dp"
+                android:layout_height="118dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:layout_marginStart="10dp"
@@ -230,7 +230,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="110dp"
-                android:layout_height="100dp"
+                android:layout_height="118dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:layout_marginStart="12dp"
@@ -259,7 +259,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/Pegawai"
                 android:layout_width="110dp"
-                android:layout_height="100dp"
+                android:layout_height="118dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:backgroundTint="#808080"
@@ -287,7 +287,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="110dp"
-                android:layout_height="100dp"
+                android:layout_height="118dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:layout_marginStart="10dp"
@@ -315,7 +315,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="110dp"
-                android:layout_height="100dp"
+                android:layout_height="118dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
                 android:layout_marginStart="12dp"

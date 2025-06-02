@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.reza.laundry"
+    namespace = "com.dinda.laundry"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.reza.laundry"
+        applicationId = "com.dinda.laundry"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -44,8 +44,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     // Firebase Dependencies
-    implementation("com.google.firebase:firebase-database-ktx:20.3.1") // Pastikan versi terbaru
     implementation("com.google.firebase:firebase-auth-ktx:22.1.2")
+    implementation("com.google.firebase:firebase-database-ktx:20.3.1")
     implementation(libs.firebase.database) // Jika menggunakan autentikasi
 
     testImplementation(libs.junit)

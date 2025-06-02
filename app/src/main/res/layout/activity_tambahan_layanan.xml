@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/tambah_pegawai"
+    android:id="@+id/tambah_layanan"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -41,7 +41,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etnamalayanan"
+                android:id="@+id/etnamatambahlayanan"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,12 +63,12 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etharga"
+                android:id="@+id/ettambahhargalayanan"
                 android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:inputType="textPostalAddress"
+                android:inputType="number"
                 android:background="@android:drawable/edit_text"
                 android:hint="Harga"
                 android:padding="12dp" />
@@ -92,7 +92,7 @@
                 android:layout_marginBottom="16dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="Cabang"
-                android:inputType="phone"
+                android:inputType="text"
                 android:maxLength="14"
                 android:padding="12dp" />
 

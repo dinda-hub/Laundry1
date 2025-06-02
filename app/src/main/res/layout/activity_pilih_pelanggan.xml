@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.reza.laundry.pilihan.PilihPelangganActivity">
+    tools:context="com.dinda.laundry.pilihan.PilihPelangganActivity">
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
