@@ -245,7 +245,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Cetak\nInvoice"
-                android:backgroundTint="#2196F3"
+                android:backgroundTint="#B0C4DE"
                 android:textColor="@android:color/white"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

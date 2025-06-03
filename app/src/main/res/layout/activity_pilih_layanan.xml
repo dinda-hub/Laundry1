@@ -8,7 +8,7 @@
     tools:context="com.dinda.laundry.pilihan.PilihLayananActivity">
 
     <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/searchViewLayanan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvKosong"
+        android:id="@+id/tvKosongLayanan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -25,7 +25,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/searchViewLayanan" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPILIH_LAYANAN"
@@ -36,7 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvKosong"
+        app:layout_constraintTop_toBottomOf="@+id/tvKosongLayanan"
         tools:listitem="@layout/cardpilihlayanan" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
