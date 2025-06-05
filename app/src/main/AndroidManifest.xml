@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.dinda.laundry">
+    package="com.dinda.laundry" >
 
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,15 +17,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Laundry"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".transaksi.KonfirmasiTransaksiActivity"
+            android:name=".laporan.DataLaporanActivity"
             android:exported="false" />
         <activity
-            android:name=".InvoiceActivity"
+            android:name=".transaksi.InvoiceActivity"
             android:exported="false" />
         <activity
-            android:name=".KonfirmasiDataActivity"
+            android:name=".transaksi.KonfirmasiDataActivity"
             android:exported="false" />
         <activity
             android:name=".pilihan.PilihTambahanActivity"
@@ -72,7 +74,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

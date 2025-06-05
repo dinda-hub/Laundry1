@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Tambah Pelanggan"
+                android:text="@string/tambahpelanggan"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Nama Lengkap"
+                android:text="@string/tvnamalengkap_tambahpelanggan"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -48,7 +48,7 @@
                 android:layout_marginTop="-10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@android:drawable/edit_text"
-                android:hint="Nama Lengkap"
+                android:hint="@string/etnamalengkap_tambahpelanggan"
                 android:inputType="textPersonName"
                 android:padding="12dp" />
 
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Alamat"
+                android:text="@string/tvalamat_tambahpelanggan"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@android:drawable/edit_text"
-                android:hint="Alamat"
+                android:hint="@string/etalamat_tambahpelanggan"
                 android:inputType="textPostalAddress"
                 android:padding="12dp" />
 
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="No HP Aktif"
+                android:text="@string/tvnohpaktif_tambahpelanggan"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@android:drawable/edit_text"
-                android:hint="No HP"
+                android:hint="@string/etnohpaktif_tambahpelanggan"
                 android:inputType="phone"
                 android:maxLength="14"
                 android:padding="12dp" />
@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Cabang"
+                android:text="@string/tvcabang_tambahpelanggan"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:background="@android:drawable/edit_text"
-                android:hint="Cabang"
+                android:hint="@string/etcabang_tambahpelanggan"
                 android:inputType="text"
                 android:padding="12dp" />
 

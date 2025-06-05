@@ -1,5 +1,6 @@
 package com.dinda.laundry.adapter
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,82 +14,156 @@ import com.dinda.laundry.Layanan.TambahanLayananActivity
 import com.dinda.laundry.R
 import com.reza.laundry.modeldata.modellayanan
 
-class adapterdatalayanan (private val layananList: ArrayList<modellayanan>) :
-    RecyclerView.Adapter<adapterdatalayanan.LayananViewHolder>() {
+class adapterdatalayanan (
+    private val listLayanan: ArrayList<modellayanan>,
+    private val onEditClick: ((modellayanan, Int) -> Unit)? = null,
+    private val onDeleteClick: ((modellayanan, Int) -> Unit)? = null,
+    private val onViewClick: ((modellayanan, Int) -> Unit)? = null
+) : RecyclerView.Adapter<adapterdatalayanan.ViewHolder>() {
 
-    class LayananViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvIdLayanan: TextView = itemView.findViewById(R.id.tvidlayanan)
-        val tvNamaLayanan: TextView = itemView.findViewById(R.id.tvnamadatalayanan)
-        val tvHargaLayanan: TextView = itemView.findViewById(R.id.tvhargadatalayanan)
-        val tvCabangLayanan: TextView = itemView.findViewById(R.id.tvcabangdatalayanan)
-        val btnHubungi: Button = itemView.findViewById(R.id.btnhubungidatalayanan)
-        val btnLihat: Button = itemView.findViewById(R.id.btnlihatdatalayanan)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LayananViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.data_layanan, parent, false)
-        return LayananViewHolder(itemView)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: LayananViewHolder, position: Int) {
-        val currentLayanan = layananList[position]
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = listLayanan[position]
 
-        // DEBUG: Log semua data yang diterima
-        Log.d("AdapterDebug", "=== Item ke-$position ===")
-        Log.d("AdapterDebug", "ID Layanan: ${currentLayanan.idLayanan}")
-        Log.d("AdapterDebug", "Nama Layanan: ${currentLayanan.namaLayanan}")
-        Log.d("AdapterDebug", "Harga: ${currentLayanan.hargaLayanan}")
-        Log.d("AdapterDebug", "Cabang: '${currentLayanan.cabangLayanan}'")
-        Log.d("AdapterDebug", "Cabang null? ${currentLayanan.cabangLayanan == null}")
-        Log.d("AdapterDebug", "Cabang empty? ${currentLayanan.cabangLayanan?.isEmpty()}")
+        // Binding data dengan null check
+        holder.tvDataIDLayanan?.text = item.idLayanan ?: ""
+        holder.tvNama?.text = item.namaLayanan ?: ""
+        holder.tvHarga?.text = item.hargaLayanan ?: ""
+        holder.tvTerdaftar?.text = "Terdaftar: ${item.tanggalTerdaftar ?: "-"}"
+        holder.tvCabang?.text = "Cabang ${item.cabangLayanan ?: "Tidak Ada Cabang"}"
 
-        // Set data to views dengan pengecekan null yang lebih detail
-        holder.tvIdLayanan.text = currentLayanan.idLayanan ?: "ID tidak tersedia"
-        holder.tvNamaLayanan.text = currentLayanan.namaLayanan ?: "Nama tidak tersedia"
-        holder.tvHargaLayanan.text = "Rp ${currentLayanan.hargaLayanan ?: "0"}"
-
-        // Pengecekan cabang yang lebih detail
-        val cabangText = when {
-            currentLayanan.cabangLayanan.isNullOrEmpty() -> "Cabang tidak diketahui"
-            else -> "Cabang: ${currentLayanan.cabangLayanan}"
-        }
-        holder.tvCabangLayanan.text = cabangText
-
-        // DEBUG: Log text yang di-set ke TextView
-        Log.d("AdapterDebug", "Text yang di-set ke TextView Cabang: '$cabangText'")
-
-        // Set click listeners
-        holder.btnHubungi.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Menghubungi layanan ${currentLayanan.namaLayanan}", Toast.LENGTH_SHORT).show()
-        }
-
-        holder.btnLihat.setOnClickListener {
-            val context = holder.itemView.context
-            val intent = Intent(context, TambahanLayananActivity::class.java).apply {
-                putExtra("idLayanan", currentLayanan.idLayanan)
-                putExtra("JudulLayanan", "Edit Layanan")
-                putExtra("namaLayanan", currentLayanan.namaLayanan)
-                putExtra("harga", currentLayanan.hargaLayanan)
-                putExtra("idCabangLayanan", currentLayanan.cabangLayanan)
-            }
-            context.startActivity(intent)
-        }
-
+        // Click listener untuk card view (edit/sunting)
         holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
-            val intent = Intent(context, TambahanLayananActivity::class.java).apply {
-                putExtra("idLayanan", currentLayanan.idLayanan)
-                putExtra("JudulLayanan", "Detail Layanan")
-                putExtra("namaLayanan", currentLayanan.namaLayanan)
-                putExtra("harga", currentLayanan.hargaLayanan)
-                putExtra("idCabangLayanan", currentLayanan.cabangLayanan)
+            onEditClick?.invoke(item, position)
+        }
+
+        // Click listener untuk tombol hapus
+        holder.btnHapus?.setOnClickListener {
+            showDeleteConfirmation(holder.itemView, item, position)
+        }
+
+        // Click listener untuk tombol lihat (dialog_mod_layanan)
+        holder.btnLihat?.setOnClickListener {
+            onViewClick?.invoke(item, position)
+        }
+    }
+
+    private fun showDeleteConfirmation(view: View, item: modellayanan, position: Int) {
+        AlertDialog.Builder(view.context)
+            .setTitle("Konfirmasi Hapus")
+            .setMessage("Apakah Anda yakin ingin menghapus layanan \"${item.namaLayanan}\"?")
+            .setPositiveButton("Hapus") { _, _ ->
+                onDeleteClick?.invoke(item, position)
             }
-            context.startActivity(intent)
+            .setNegativeButton("Batal", null)
+            .show()
+    }
+
+    // Fungsi untuk menghapus item dari list
+    fun removeItem(position: Int) {
+        if (position >= 0 && position < listLayanan.size) {
+            listLayanan.removeAt(position)
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, listLayanan.size)
+        }
+    }
+
+    // Fungsi untuk update item setelah edit
+    fun updateItem(position: Int, updatedItem: modellayanan) {
+        if (position >= 0 && position < listLayanan.size) {
+            listLayanan[position] = updatedItem
+            notifyItemChanged(position)
         }
     }
 
     override fun getItemCount(): Int {
-        return layananList.size
+        return listLayanan.size
+    }
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        // Gunakan nullable untuk menghindari crash jika ID tidak ditemukan
+        val tvDataIDLayanan: TextView? = try {
+            itemView.findViewById(R.id.tvDataIDLayanan)
+        } catch (e: Exception) {
+            Log.e("AdapterLayanan", "tvDataIDLayanan not found: ${e.message}")
+            null
+        }
+
+        val tvNama: TextView? = try {
+            itemView.findViewById(R.id.tvDataNamaLayanan)
+        } catch (e: Exception) {
+            Log.e("AdapterLayanan", "tvDataNamaLayanan not found: ${e.message}")
+            null
+        }
+
+        val tvHarga: TextView? = try {
+            itemView.findViewById(R.id.tvDataHargaLayanan)
+        } catch (e: Exception) {
+            Log.e("AdapterLayanan", "tvDataHargaLayanan not found: ${e.message}")
+            null
+        }
+
+        val tvCabang: TextView? = try {
+            itemView.findViewById(R.id.tvDataCabangLayanan)
+        } catch (e: Exception) {
+            Log.e("AdapterLayanan", "tvDataCabangLayanan not found: ${e.message}")
+            null
+        }
+
+        val tvTerdaftar: TextView? = try {
+            itemView.findViewById(R.id.tv_Terdaftar)
+        } catch (e: Exception) {
+            // Coba ID alternatif yang mungkin ada
+            try {
+                itemView.findViewById(R.id.tv_Terdaftar)
+            } catch (e2: Exception) {
+                Log.e("AdapterLayanan", "tv_Terdaftar/tvDataTerdaftarLayanan not found: ${e2.message}")
+                null
+            }
+        }
+
+        // Tombol hapus dan lihat dengan try-catch
+        val btnHapus: Button? = try {
+            itemView.findViewById(R.id.btnHapus)
+        } catch (e: Exception) {
+            // Coba ID alternatif
+            try {
+                itemView.findViewById(R.id.btnHapus)
+            } catch (e2: Exception) {
+                Log.e("AdapterLayanan", "btnHapus/btDataHapusLayanan not found: ${e2.message}")
+                null
+            }
+        }
+
+        val btnLihat: Button? = try {
+            itemView.findViewById(R.id.btnLihat)
+        } catch (e: Exception) {
+            // Coba ID alternatif
+            try {
+                itemView.findViewById(R.id.btnLihat)
+            } catch (e2: Exception) {
+                Log.e("AdapterLayanan", "btnLihat/btnDataLihatLayanan not found: ${e2.message}")
+                null
+            }
+        }
+
+        init {
+            // Log untuk debugging - lihat ID mana yang berhasil ditemukan
+            Log.d("AdapterLayanan", """
+                ViewHolder initialized:
+                - tvDataIDLayanan: ${if (tvDataIDLayanan != null) "Found" else "Not Found"}
+                - tvNama: ${if (tvNama != null) "Found" else "Not Found"}
+                - tvHarga: ${if (tvHarga != null) "Found" else "Not Found"}
+                - tvCabang: ${if (tvCabang != null) "Found" else "Not Found"}
+                - tvTerdaftar: ${if (tvTerdaftar != null) "Found" else "Not Found"}
+                - btnHapus: ${if (btnHapus != null) "Found" else "Not Found"}
+                - btnLihat: ${if (btnLihat != null) "Found" else "Not Found"}
+            """.trimIndent())
+        }
     }
 }

@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Tambah Layanan"
+                android:text="@string/tambahlayanan"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Nama Layanan"
+                android:text="@string/tvnamalayanan_tambahlayanan"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -48,7 +48,7 @@
                 android:layout_marginBottom="16dp"
                 android:inputType="textPersonName"
                 android:background="@android:drawable/edit_text"
-                android:hint="Nama Layanan"
+                android:hint="@string/etnamalayanan_tambahlayanan"
                 android:padding="12dp" />
 
             <TextView
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Harga"
+                android:text="@string/tvharga_tambahlayanan"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -70,7 +70,7 @@
                 android:layout_marginBottom="16dp"
                 android:inputType="number"
                 android:background="@android:drawable/edit_text"
-                android:hint="Harga"
+                android:hint="@string/etharga_tambahlayanan"
                 android:padding="12dp" />
 
             <TextView
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Cabang"
+                android:text="@string/tvcabang_tambahlayanan"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:background="@android:drawable/edit_text"
-                android:hint="Cabang"
+                android:hint="@string/etcabang_tambahlayanan"
                 android:inputType="text"
                 android:maxLength="14"
                 android:padding="12dp" />

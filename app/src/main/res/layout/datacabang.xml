@@ -1,92 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/datacabang"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/CVDATA_CABANG"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    card_view:cardCornerRadius="8dp"
-    card_view:cardElevation="4dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginTop="10dp">
+    android:layout_marginTop="16dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
-            android:id="@+id/tvidCabang"
+            android:id="@+id/tvIDCABANG"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="#a0a0a0"
-            android:gravity="center_vertical"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:text="ID Cabang"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"/>
+            android:layout_height="wrap_content"
+            android:text="@string/idcabang" />
+
+        <TextView
+            android:id="@+id/tvNamaLokasiCabang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama Cabang"
+            android:textSize="24sp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/tvAlamatCabang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alamat"
+            android:textSize="16sp"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tvTeleponCabang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No HP"
+            android:textSize="16sp"
+            android:paddingTop="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:weightSum="2">
 
-            <TextView
-                android:id="@+id/tvnamadatacabang"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btnContact"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Nama Cabang"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp"/>
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:padding="16dp"
+                android:text="Hubungi"
+                android:backgroundTint="#10b981"/>
 
-            <TextView
-                android:id="@+id/tvalamatdatacabang"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btnLihat"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Alamat"
-                android:textSize="14sp"
-                android:layout_marginBottom="2dp"/>
-
-            <TextView
-                android:id="@+id/tvnohpdatacabang"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="No HP"
-                android:textSize="14dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="14dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/btnhubungidatacabang"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Hubungi"
-                    android:backgroundTint="#B0C4DE"
-                    android:textColor="@android:color/white"
-                    android:layout_marginEnd="8dp"/>
-
-                <Button
-                    android:id="@+id/btnlihatdatacabang"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Lihat"
-                    android:backgroundTint="#778899"
-                    android:textColor="@android:color/white"/>
-
-            </LinearLayout>
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:padding="16dp"
+                android:text="Lihat"
+                android:backgroundTint="#f59e0b"/>
         </LinearLayout>
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

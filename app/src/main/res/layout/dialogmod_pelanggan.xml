@@ -49,6 +49,7 @@
                     android:textColor="#666666" />
 
                 <TextView
+                    android:id="@+id/idPelanggan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -75,6 +76,7 @@
                     android:textColor="#666666" />
 
                 <TextView
+                    android:id="@+id/namaPelanggan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -101,6 +103,7 @@
                     android:textColor="#666666" />
 
                 <TextView
+                    android:id="@+id/alamatPelanggan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -127,6 +130,7 @@
                     android:textColor="#666666" />
 
                 <TextView
+                    android:id="@+id/nohpPelanggan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -153,10 +157,38 @@
                     android:textColor="#666666" />
 
                 <TextView
+                    android:id="@+id/cabangPelanggan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Sumber"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="-17dp"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Terdaftar"
+                    android:textSize="16sp"
+                    android:textColor="#666666" />
+
+                <TextView
+                    android:id="@+id/terdaftarPelanggan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="terdaftar"
                     android:textSize="16sp"
                     android:textColor="#333333"
                     android:gravity="end" />
@@ -172,7 +204,7 @@
 
                 <!-- Button Sunting -->
                 <Button
-                    android:id="@+id/btn_sunting"
+                    android:id="@+id/btn_suntingPelanggan"
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
@@ -185,7 +217,7 @@
 
                 <!-- Button Hapus -->
                 <Button
-                    android:id="@+id/btn_hapus"
+                    android:id="@+id/btn_hapusPelanggan"
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"

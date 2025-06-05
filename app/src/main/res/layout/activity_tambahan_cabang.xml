@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Tambah Cabang"
+                android:text="@string/tambahcabang"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Nama Cabang"
+                android:text="@string/NamaCabang"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -48,7 +48,7 @@
                 android:layout_marginBottom="16dp"
                 android:inputType="textPersonName"
                 android:background="@android:drawable/edit_text"
-                android:hint="Nama Cabang"
+                android:hint="@string/NamaCabang"
                 android:padding="12dp" />
 
             <TextView
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="Alamat"
+                android:text="@string/tvAlamat_cabang"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:background="@android:drawable/edit_text"
-                android:hint="Alamat"
+                android:hint="@string/tvAlamat_cabang"
                 android:inputType="text"
                 android:padding="12dp" />
 
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:text="No HP"
+                android:text="@string/nohp"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:background="@android:drawable/edit_text"
-                android:hint="No HP"
+                android:hint="@string/nohp"
                 android:inputType="phone"
                 android:maxLength="14"
                 android:padding="12dp" />
