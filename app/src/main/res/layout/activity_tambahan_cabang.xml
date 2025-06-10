@@ -47,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/NamaCabang"
                 android:padding="12dp" />
@@ -68,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:textColor="@color/black"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/tvAlamat_cabang"
                 android:inputType="text"
@@ -90,6 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:textColor="@color/black"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/nohp"
                 android:inputType="phone"

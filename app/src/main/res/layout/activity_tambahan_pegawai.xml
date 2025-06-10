@@ -47,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/etnamalengkap_tambahpegawai"
                 android:padding="12dp" />
@@ -69,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:inputType="textPostalAddress"
+                android:textColor="@color/black"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/etalamat_tambahpegawai"
                 android:padding="12dp" />
@@ -92,6 +94,7 @@
                 android:layout_marginBottom="16dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/etnohpaktif_tambahpegawai"
+                android:textColor="@color/black"
                 android:inputType="phone"
                 android:maxLength="14"
                 android:padding="12dp" />
@@ -115,6 +118,7 @@
                 android:layout_marginBottom="24dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/etcabang_tambahpegawai"
+                android:textColor="@color/black"
                 android:inputType="text"
                 android:padding="12dp" />
 

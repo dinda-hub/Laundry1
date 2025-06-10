@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#dc2626"
                 android:padding="16dp"
-                android:text="Hapus"
+                android:text="@string/hapus"
                 android:layout_marginRight="5dp"/>
             <Button
                 android:layout_weight="1"
@@ -80,7 +80,7 @@
                 android:backgroundTint="#f59e0b"
                 android:padding="16dp"
                 android:layout_marginLeft="5dp"
-                android:text="Lihat"/>
+                android:text="@string/lihat"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

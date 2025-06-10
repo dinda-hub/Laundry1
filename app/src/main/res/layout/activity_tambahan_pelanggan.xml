@@ -50,6 +50,7 @@
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/etnamalengkap_tambahpelanggan"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:padding="12dp" />
 
             <TextView
@@ -71,6 +72,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/etalamat_tambahpelanggan"
+                android:textColor="@color/black"
                 android:inputType="textPostalAddress"
                 android:padding="12dp" />
 
@@ -95,6 +97,7 @@
                 android:hint="@string/etnohpaktif_tambahpelanggan"
                 android:inputType="phone"
                 android:maxLength="14"
+                android:textColor="@color/black"
                 android:padding="12dp" />
 
             <TextView
@@ -116,6 +119,7 @@
                 android:layout_marginBottom="24dp"
                 android:background="@android:drawable/edit_text"
                 android:hint="@string/etcabang_tambahpelanggan"
+                android:textColor="@color/black"
                 android:inputType="text"
                 android:padding="12dp" />
 

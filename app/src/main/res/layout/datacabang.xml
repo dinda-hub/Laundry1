@@ -25,7 +25,7 @@
             android:id="@+id/tvNamaLokasiCabang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nama Cabang"
+            android:text="@string/NamaCabang"
             android:textSize="24sp"
             android:layout_marginTop="16dp"/>
 
@@ -33,7 +33,7 @@
             android:id="@+id/tvAlamatCabang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Alamat"
+            android:text="@string/tvAlamat_cabang"
             android:textSize="16sp"
             android:paddingTop="8dp"/>
 
@@ -41,7 +41,7 @@
             android:id="@+id/tvTeleponCabang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="No HP"
+            android:text="@string/nohp"
             android:textSize="16sp"
             android:paddingTop="8dp"/>
 
@@ -59,7 +59,7 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="5dp"
                 android:padding="16dp"
-                android:text="Hubungi"
+                android:text="@string/hubungi"
                 android:backgroundTint="#10b981"/>
 
             <Button
@@ -69,7 +69,7 @@
                 android:layout_weight="1"
                 android:layout_marginStart="5dp"
                 android:padding="16dp"
-                android:text="Lihat"
+                android:text="@string/lihat"
                 android:backgroundTint="#f59e0b"/>
         </LinearLayout>
     </LinearLayout>

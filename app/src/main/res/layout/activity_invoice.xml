@@ -65,7 +65,7 @@
                 android:id="@+id/tv_id_transaksi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ID Transaksi"
+                android:text="@string/idtransaksi"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
                 android:id="@+id/tv_tanggal_invoice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tanggal"
+                android:text="@string/tanggal"
                 android:textSize="14sp"
                 android:layout_marginTop="4dp" />
 
@@ -81,7 +81,7 @@
                 android:id="@+id/tv_nama_pelanggan_invoice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Pelanggan"
+                android:text="@string/namapelanggan"
                 android:textSize="14sp"
                 android:layout_marginTop="8dp" />
 
@@ -89,7 +89,7 @@
                 android:id="@+id/tv_no_hp_invoice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No HP Pelanggan"
+                android:text="@string/tvNoHP_cabang"
                 android:textSize="14sp"
                 android:layout_marginTop="4dp" />
 
@@ -97,7 +97,7 @@
                 android:id="@+id/tvStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Status"
+                android:text="@string/status"
                 android:textSize="14sp"
                 android:layout_marginTop="4dp" />
         </LinearLayout>
@@ -126,7 +126,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Nama Layanan"
+            android:text="@string/namalayanan"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -134,7 +134,7 @@
             android:id="@+id/tv_harga_layanan_invoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Harga Layanan"
+            android:text="@string/hargalayanan"
             android:textSize="18sp"
             android:textStyle="bold"
             android:paddingStart="10dp"/>
@@ -145,7 +145,7 @@
         android:id="@+id/tv_label_rincian_tambahan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Rincian Tambahan"
+        android:text="@string/rinciantambahan"
         android:textSize="16sp"
         android:textStyle="bold"
         android:padding="12dp"
@@ -173,7 +173,7 @@
         android:id="@+id/tvsubtotal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Subtotal Tambahan: "
+        android:text="@string/subtotaltambahan"
         android:textSize="14sp"
         android:gravity="end"
         android:layout_marginTop="4dp"
@@ -217,7 +217,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Total Bayar"
+            android:text="@string/totalbayar"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -249,11 +249,11 @@
 
         <Button
             android:id="@+id/btn_kirim_wa"
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="6dp"
-            android:text="Kirim\nWhatsApp"
+            android:text="@string/kirimwhatsapp"
             android:backgroundTint="#25D366"
             android:textColor="@android:color/white"/>
 
@@ -263,10 +263,10 @@
 
         <Button
             android:id="@+id/btn_cetak_invoice"
-            android:layout_width="150dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cetak\nInvoice"
+            android:text="@string/cetakinvoice"
             android:backgroundTint="#B0C4DE"
             android:textColor="@android:color/white"/>
 

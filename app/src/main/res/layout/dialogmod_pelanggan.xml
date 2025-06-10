@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Detail Pelanggan"
+                android:text="@string/detailpelanggan"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="#333333"
@@ -44,7 +44,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="ID Pelanggan"
+                    android:text="@string/idpelanggan"
                     android:textSize="16sp"
                     android:textColor="#666666" />
 
@@ -71,7 +71,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Nama Pelanggan"
+                    android:text="@string/namapelanggan"
                     android:textSize="16sp"
                     android:textColor="#666666" />
 
@@ -98,7 +98,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Alamat"
+                    android:text="@string/tvAlamat_cabang"
                     android:textSize="16sp"
                     android:textColor="#666666" />
 
@@ -125,7 +125,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="No HP"
+                    android:text="@string/tvNoHP_cabang"
                     android:textSize="16sp"
                     android:textColor="#666666" />
 
@@ -152,7 +152,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Cabang"
+                    android:text="@string/cabang"
                     android:textSize="16sp"
                     android:textColor="#666666" />
 
@@ -179,7 +179,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Terdaftar"
+                    android:text="@string/terdaftar"
                     android:textSize="16sp"
                     android:textColor="#666666" />
 
@@ -209,7 +209,7 @@
                     android:layout_height="48dp"
                     android:layout_weight="1"
                     android:layout_marginEnd="8dp"
-                    android:text="Sunting"
+                    android:text="@string/sunting"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp"
                     android:backgroundTint="#B0C4DE"
@@ -222,7 +222,7 @@
                     android:layout_height="48dp"
                     android:layout_weight="1"
                     android:layout_marginStart="8dp"
-                    android:text="Hapus"
+                    android:text="@string/hapus"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp"
                     android:backgroundTint="#778899"

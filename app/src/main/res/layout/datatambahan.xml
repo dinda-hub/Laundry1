@@ -21,13 +21,13 @@
             android:id="@+id/tvDataIDTambahan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ID Tambahan"
+            android:text="@string/idtambahan"
             />
         <TextView
             android:id="@+id/tvDataNamaTambahan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nama Tambahan"
+            android:text="@string/namatambahan"
             android:textSize="24sp"
             android:layout_marginTop="16dp"
             />
@@ -35,7 +35,7 @@
             android:id="@+id/tvDataHargaTambahan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Harga"
+            android:text="@string/hargalayanan_transaksi"
             android:textSize="16sp"
             android:paddingTop="8dp"
             />
@@ -43,7 +43,7 @@
             android:id="@+id/tv_TerdaftarTambahan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Terdaftar"
+            android:text="@string/terdaftar"
             android:textSize="16sp"
             android:paddingTop="8dp"
             />
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#dc2626"
                 android:padding="16dp"
-                android:text="Hapus"
+                android:text="@string/hapus"
                 android:layout_marginRight="5dp"/>
             <Button
                 android:layout_weight="1"
@@ -72,7 +72,7 @@
                 android:backgroundTint="#f59e0b"
                 android:padding="16dp"
                 android:layout_marginLeft="5dp"
-                android:text="Lihat"/>
+                android:text="@string/lihat"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

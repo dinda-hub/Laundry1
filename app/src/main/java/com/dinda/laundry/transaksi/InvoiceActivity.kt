@@ -504,7 +504,7 @@ class InvoiceActivity : AppCompatActivity() {
             append("------------------------------\n")
 
             val namaUtama = tvLayananUtama.text.toString().take(20).padEnd(20)
-            val hargaUtama = tvHargaLayanan.text.toString().padStart(12)
+            val hargaUtama = tvHargaLayanan.text.toString().padStart(10)
             append("$namaUtama$hargaUtama\n")
 
             if (listTambahan.isNotEmpty()) {

@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:id="@+id/data_transaksi"
-    android:background="#FFF9FC">
+    android:id="@+id/data_transaksi">
 
     <!-- DATA PELANGGAN -->
     <TextView
@@ -15,7 +14,6 @@
         android:text="@string/datapelanggan_transaksi"
         android:textStyle="bold"
         android:textSize="23sp"
-        android:textColor="#333333"
         android:layout_marginTop="10dp"
         android:layout_marginStart="12dp"/>
 
@@ -25,7 +23,6 @@
         android:layout_height="wrap_content"
         android:text="@string/namapelanggan_transaksi"
         android:textSize="18sp"
-        android:textColor="#000000"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"/>
 
@@ -36,7 +33,6 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
         android:text="@string/nohppelanggan_transaksi"
-        android:textColor="#000000"
         android:textSize="18sp" />
 
     <Button
@@ -60,7 +56,6 @@
         android:text="@string/layananutama_transaksi"
         android:textStyle="bold"
         android:textSize="23sp"
-        android:textColor="#333333"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"/>
 
@@ -70,7 +65,6 @@
         android:layout_height="wrap_content"
         android:text="@string/namalayanan_transaksi"
         android:textSize="18sp"
-        android:textColor="#000000"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"/>
 
@@ -80,7 +74,6 @@
         android:layout_height="wrap_content"
         android:text="@string/hargalayanan_transaksi"
         android:textSize="18sp"
-        android:textColor="#000000"
         android:layout_marginStart="10dp"
         android:layout_marginTop="4dp"/>
 
@@ -105,7 +98,6 @@
         android:textStyle="bold"
         android:layout_marginStart="10dp"
         android:textSize="23sp"
-        android:textColor="#333333"
         android:layout_marginTop="8dp"/>
 
     <!-- RecyclerView untuk Layanan Tambahan -->
