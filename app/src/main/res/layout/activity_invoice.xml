@@ -1,275 +1,279 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="20dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <!-- Header Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_header"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="20dp">
+        android:layout_marginBottom="30dp"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Header Card -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_header"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            app:cardElevation="6dp"
-            app:cardCornerRadius="12dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/tv_header_nama_usaha"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Laundry Dinda"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_header_alamat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nusukan"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Info Transaksi Card -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_info_transaksi"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:cardElevation="4dp"
-            app:cardCornerRadius="12dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="2dp"
-            app:layout_constraintTop_toBottomOf="@id/card_header"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/tv_id_transaksi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ID Transaksi"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_tanggal_invoice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tanggal"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp" />
-
-                <TextView
-                    android:id="@+id/tv_nama_pelanggan_invoice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nama Pelanggan"
-                    android:textSize="14sp"
-                    android:layout_marginTop="8dp" />
-
-                <!-- TAMBAHKAN: TextView untuk menampilkan nomor HP -->
-                <TextView
-                    android:id="@+id/tv_no_hp_invoice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="No HP Pelanggan"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp" />
-
-                <!-- TextView untuk Status -->
-                <TextView
-                    android:id="@+id/tvStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Status"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Layanan utama dan harga -->
         <LinearLayout
-            android:id="@+id/layout_layanan_utama"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:elevation="2dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintTop_toBottomOf="@id/card_info_transaksi"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:gravity="center_vertical"
-            android:clipToPadding="false"
-            android:clipChildren="false"
-            android:layout_marginHorizontal="0dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center">
 
             <TextView
-                android:id="@+id/tv_nama_layanan_invoice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Nama Layanan"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/tv_harga_layanan_invoice"
+                android:id="@+id/tv_header_nama_usaha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Harga Layanan"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:paddingStart="10dp"/>
-        </LinearLayout>
-
-        <!-- Rincian Tambahan -->
-        <TextView
-            android:id="@+id/tv_label_rincian_tambahan"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Rincian Tambahan"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:padding="12dp"
-            app:layout_constraintTop_toBottomOf="@id/layout_layanan_utama"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <!-- RecyclerView untuk layanan tambahan -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_tambahan_konfirmasi"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingHorizontal="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_label_rincian_tambahan"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <!-- Tempat untuk list tambahan (HAPUS atau ubah jadi GONE jika tidak digunakan) -->
-        <LinearLayout
-            android:id="@+id/layout_list_tambahan"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="12dp"
-            android:layout_marginTop="8dp"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@id/rv_tambahan_konfirmasi"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <!-- Subtotal Tambahan -->
-        <TextView
-            android:id="@+id/tv_tambahan_invoice"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Subtotal Tambahan: Rp14.000,00"
-            android:textSize="14sp"
-            android:gravity="end"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/rv_tambahan_konfirmasi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <!-- Total Bayar dan Metode Pembayaran -->
-        <LinearLayout
-            android:id="@+id/layout_total_pembayaran"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp"
-            android:gravity="center_vertical"
-            app:layout_constraintTop_toBottomOf="@id/tv_tambahan_invoice"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:paddingHorizontal="12dp">
-
-            <TextView
-                android:id="@+id/tv_total_bayar_invoice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Total Bayar"
-                android:textSize="18sp"
+                android:text="Laundry Dinda"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_total_bayar"
+                android:id="@+id/tv_header_alamat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rp54.000,00"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:text="Nusukan"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-        <!-- Tombol aksi -->
+    <!-- Info Transaksi Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_info_transaksi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="2dp"
+        app:layout_constraintTop_toBottomOf="@id/card_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
         <LinearLayout
-            android:id="@+id/layout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_id_transaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID Transaksi"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_tanggal_invoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tanggal"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_nama_pelanggan_invoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Pelanggan"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tv_no_hp_invoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No HP Pelanggan"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Layanan utama dan harga -->
+    <LinearLayout
+        android:id="@+id/layout_layanan_utama"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:elevation="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/card_info_transaksi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_vertical"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:layout_marginHorizontal="0dp">
+
+        <TextView
+            android:id="@+id/tv_nama_layanan_invoice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="28dp"
-            app:layout_constraintTop_toBottomOf="@id/layout_total_pembayaran"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:paddingHorizontal="12dp"
-            android:weightSum="3">
+            android:layout_weight="1"
+            android:text="Nama Layanan"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
-            <Button
-                android:id="@+id/btn_kirim_wa"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Kirim\nWhatsApp"
-                android:backgroundTint="#25D366"
-                android:textColor="@android:color/white"/>
+        <TextView
+            android:id="@+id/tv_harga_layanan_invoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harga Layanan"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingStart="10dp"/>
+    </LinearLayout>
 
-            <Space
-                android:layout_width="16dp"
-                android:layout_height="wrap_content" />
+    <!-- Rincian Tambahan -->
+    <TextView
+        android:id="@+id/tv_label_rincian_tambahan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Rincian Tambahan"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/layout_layanan_utama"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-            <Button
-                android:id="@+id/btn_cetak_invoice"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Cetak\nInvoice"
-                android:backgroundTint="#B0C4DE"
-                android:textColor="@android:color/white"/>
+    <!-- RecyclerView untuk layanan tambahan dengan batasan tinggi -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tambahan_konfirmasi"
+        android:layout_width="400dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-5dp"
+        android:layout_marginBottom="10dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_rincian_tambahan"
+        app:layout_constraintBottom_toTopOf="@id/tv_tambahan_invoice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="300dp"
+        app:layout_constraintHeight_min="50dp" />
 
-            <Space
-                android:layout_width="16dp"
-                android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tvsubtotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Subtotal Tambahan: "
+        android:textSize="14sp"
+        android:gravity="end"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"
+        android:paddingHorizontal="100dp"
+        app:layout_constraintBottom_toTopOf="@id/layout_total_pembayaran"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
+    <!-- Subtotal Tambahan -->
+    <TextView
+        android:id="@+id/tv_tambahan_invoice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Rp14.000,00"
+        android:textSize="14sp"
+        android:gravity="end"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintBottom_toTopOf="@id/layout_total_pembayaran"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-        </LinearLayout>
+    <!-- Total Bayar dan Metode Pembayaran -->
+    <LinearLayout
+        android:id="@+id/layout_total_pembayaran"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@id/layout_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="16dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_total_bayar_invoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total Bayar"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-</ScrollView>
+        <TextView
+            android:id="@+id/tv_total_bayar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp54.000,00"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Tombol aksi -->
+    <LinearLayout
+        android:id="@+id/layout_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="19dp"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/btn_kirim_wa"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:text="Kirim\nWhatsApp"
+            android:backgroundTint="#25D366"
+            android:textColor="@android:color/white"/>
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_cetak_invoice"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cetak\nInvoice"
+            android:backgroundTint="#B0C4DE"
+            android:textColor="@android:color/white"/>
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

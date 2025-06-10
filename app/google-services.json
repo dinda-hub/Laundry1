@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "253516708192",
+    "firebase_url": "https://laundrydindaaulia-default-rtdb.firebaseio.com",
+    "project_id": "laundrydindaaulia",
+    "storage_bucket": "laundrydindaaulia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253516708192:android:6fea27d719db2946324605",
+        "android_client_info": {
+          "package_name": "com.dinda.laundry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6MIDQziS-K3VhsmwxE5jk3sYvVlstgwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253516708192:android:26f00fb4b512a1d9324605",
+        "android_client_info": {
+          "package_name": "com.reza.laundry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6MIDQziS-K3VhsmwxE5jk3sYvVlstgwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
