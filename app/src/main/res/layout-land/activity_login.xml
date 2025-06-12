@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#a9a9a9">
+    android:orientation="horizontal"
+    android:background="#a9a9a9"
+    android:padding="20dp"
+    android:gravity="center">
 
+    <!-- Bagian Kiri: Logo dan Welcome Text -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center_horizontal">
+        android:gravity="center"
+        android:layout_marginEnd="24dp">
 
         <ImageView
             android:layout_width="100dp"
@@ -18,63 +23,69 @@
             android:src="@drawable/mesincuci2" />
 
         <TextView
-            android:id="@+id/tvselamatdatangregister"
+            android:id="@+id/tvselamatdatang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/selamatdatanglogin"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp" />
 
         <TextView
-            android:id="@+id/tvSilahkanDaftar"
+            android:id="@+id/tvSilahkanLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="@string/Silakandaftaruntukmelanjutkan"
-            android:layout_marginBottom="24dp"
-            android:gravity="center"
+            android:text="@string/silahkan_login"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
             android:textAlignment="center" />
 
-        <EditText
-            android:id="@+id/etusernameregister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/namalengkap_register"
-            android:inputType="text"
-            android:backgroundTint="#778899"
-            android:textColorHint="@color/white"
-            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+
+    <!-- Bagian Kanan: Form Login -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginStart="24dp">
 
         <EditText
-            android:id="@+id/etnohpregister"
+            android:id="@+id/etnohplogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/nohp"
             android:inputType="phone"
             android:backgroundTint="#778899"
+            android:layout_marginBottom="12dp"
             android:textColorHint="@color/white"
-            android:layout_marginBottom="16dp" />
+            android:textColor="#FFFFFF"
+            android:maxWidth="320dp" />
 
         <!-- Layout untuk password dengan icon mata -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="12dp"
+            android:maxWidth="320dp">
 
             <EditText
-                android:id="@+id/etkatasandiregister"
+                android:id="@+id/etkatasandilogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/katasandi"
                 android:inputType="textPassword"
-                android:backgroundTint="#778899"
                 android:textColorHint="@color/white"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#778899"
                 android:paddingEnd="50dp"
                 android:paddingRight="50dp" />
 
             <ImageView
-                android:id="@+id/ivTogglePasswordRegister"
+                android:id="@+id/ivTogglePassword"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_alignParentEnd="true"
@@ -91,29 +102,29 @@
 
         </RelativeLayout>
 
-        <!-- Bagian untuk opsi login -->
+        <!-- Bagian untuk opsi register -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="@string/sudahmemilikiakun"
-                android:textSize="14sp" />
+                android:text="@string/belummemilikiakun"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/tvMasuk"
+                android:id="@+id/tvDaftar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/masuksekarang"
-                android:textSize="14sp"
+                android:text="@string/daftarsekarang"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
                 android:background="?android:attr/selectableItemBackground"
                 android:padding="4dp"
                 android:clickable="true"
@@ -122,12 +133,14 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btdaftarregister"
+            android:id="@+id/btmasuk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/daftar"
+            android:text="@string/masuk"
             android:backgroundTint="#778899"
-            android:textColor="@color/white" />
+            android:textColor="#FFFFFF"
+            android:maxWidth="320dp" />
 
     </LinearLayout>
-</ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    tools:context=".pelanggan.TambahanPelangganActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/tambah_pelanggan"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvtambahpelanggan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:text="@string/tambahpelanggan"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvnamalengkap_tambahanpelanggan"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:text="@string/tvnamalengkap_tambahpelanggan"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etnamalengkap_tambahanpelanggan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:drawable/edit_text"
+            android:hint="@string/etnamalengkap_tambahpelanggan"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/tvalamat_tambahanpelanggan"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:text="@string/tvalamat_tambahpelanggan"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etalamat_tambahanpelanggan"
+            android:layout_marginTop="-10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@android:drawable/edit_text"
+            android:hint="@string/etalamat_tambahpelanggan"
+            android:textColor="@color/black"
+            android:inputType="textPostalAddress"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/tvhp_tambahanpelanggan"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:text="@string/tvnohpaktif_tambahpelanggan"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/ethp_tambahanpelanggan"
+            android:layout_marginTop="-10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@android:drawable/edit_text"
+            android:hint="@string/etnohpaktif_tambahpelanggan"
+            android:inputType="phone"
+            android:maxLength="14"
+            android:textColor="@color/black"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/tvcabang_tambahanpelanggan"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:text="@string/tvcabang_tambahpelanggan"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etcabang_tambahanpelanggan"
+            android:layout_marginTop="-10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@android:drawable/edit_text"
+            android:hint="@string/etcabang_tambahpelanggan"
+            android:textColor="@color/black"
+            android:inputType="text"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btsimpan_tambahanpelanggan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#778899"
+            android:padding="12dp"
+            android:text="@string/simpan"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</ScrollView>

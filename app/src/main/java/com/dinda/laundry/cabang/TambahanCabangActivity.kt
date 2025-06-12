@@ -20,7 +20,7 @@ import java.util.Locale
 class TambahanCabangActivity : AppCompatActivity() {
 
     private val database = FirebaseDatabase.getInstance()
-    private val myRef = database.getReference("cabang")
+    private val myRef = database.getReference("branch")
 
     private lateinit var etNama: EditText
     private lateinit var etAlamat: EditText
@@ -47,23 +47,23 @@ class TambahanCabangActivity : AppCompatActivity() {
         val nohp = etNoHP.text.toString().trim()
 
         if (nama.isEmpty()) {
-            etNama.error = "Nama Cabang tidak boleh kosong"
+            etNama.error = "Branch Name cannot be empty"
             etNama.requestFocus()
             return
         }
         if (alamat.isEmpty()) {
-            etAlamat.error = "Alamat tidak boleh kosong"
+            etAlamat.error = "Address cannot be empty"
             etAlamat.requestFocus()
             return
         }
         if (nohp.isEmpty()) {
-            etNoHP.error = "No HP tidak boleh kosong"
+            etNoHP.error = "Mobile Number cannot be empty"
             etNoHP.requestFocus()
             return
         }
 
         // Debug log sebelum menyimpan
-        Log.d("SaveDebug", "Nama: $nama, Alamat: $alamat, No HP: $nohp")
+        Log.d("SaveDebug", "Name: $nama, Address: $alamat, Mobile Number: $nohp")
 
         simpan(nama, alamat, nohp)
     }
@@ -84,16 +84,16 @@ class TambahanCabangActivity : AppCompatActivity() {
         )
 
         // Debug log data yang akan disimpan
-        Log.d("SaveDebug", "Data yang disimpan: $data")
+        Log.d("SaveDebug", "Data stored: $data")
 
         cabangBaru.setValue(data)
             .addOnSuccessListener {
-                Toast.makeText(this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Data saved successfully", Toast.LENGTH_SHORT).show()
                 finish()
             }
             .addOnFailureListener { exception ->
                 Log.e("SaveError", "Error: ${exception.message}")
-                Toast.makeText(this, "Gagal menyimpan data: ${exception.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Failed to save data: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
     }
 }

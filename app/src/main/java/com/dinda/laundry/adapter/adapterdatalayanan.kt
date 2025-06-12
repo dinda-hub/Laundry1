@@ -34,8 +34,8 @@ class adapterdatalayanan (
         holder.tvDataIDLayanan?.text = item.idLayanan ?: ""
         holder.tvNama?.text = item.namaLayanan ?: ""
         holder.tvHarga?.text = item.hargaLayanan ?: ""
-        holder.tvTerdaftar?.text = "Terdaftar: ${item.tanggalTerdaftar ?: "-"}"
-        holder.tvCabang?.text = "Cabang ${item.cabangLayanan ?: "Tidak Ada Cabang"}"
+        holder.tvTerdaftar?.text = "${item.tanggalTerdaftar ?: "-"}"
+        holder.tvCabang?.text = "${item.cabangLayanan ?: "-"}"
 
         // Click listener untuk card view (edit/sunting)
         holder.itemView.setOnClickListener {
@@ -55,8 +55,8 @@ class adapterdatalayanan (
 
     private fun showDeleteConfirmation(view: View, item: modellayanan, position: Int) {
         AlertDialog.Builder(view.context)
-            .setTitle("Konfirmasi Hapus")
-            .setMessage("Apakah Anda yakin ingin menghapus layanan \"${item.namaLayanan}\"?")
+            .setTitle("Confirm Delete")
+            .setMessage("Are you sure you want to delete the service? \"${item.namaLayanan}\"?")
             .setPositiveButton("Hapus") { _, _ ->
                 onDeleteClick?.invoke(item, position)
             }

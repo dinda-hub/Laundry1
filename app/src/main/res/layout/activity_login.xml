@@ -41,7 +41,8 @@
             android:hint="@string/nohp"
             android:inputType="phone"
             android:backgroundTint="#778899"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:textColorHint="@color/white"/>
 
         <!-- Layout untuk password dengan icon mata -->
         <RelativeLayout
@@ -55,6 +56,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/katasandi"
                 android:inputType="textPassword"
+                android:textColorHint="@color/white"
                 android:backgroundTint="#778899"
                 android:paddingEnd="50dp"
                 android:paddingRight="50dp" />
@@ -88,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Belum memiliki akun? "
+                android:text="@string/belummemilikiakun"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
@@ -96,7 +98,7 @@
                 android:id="@+id/tvDaftar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Daftar sekarang"
+                android:text="@string/daftarsekarang"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold"

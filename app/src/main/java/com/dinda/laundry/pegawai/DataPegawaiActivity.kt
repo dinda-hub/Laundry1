@@ -135,7 +135,7 @@ class DataPegawaiActivity : AppCompatActivity() {
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(this@DataPegawaiActivity, "Gagal ambil data: ${error.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@DataPegawaiActivity, "Failed to fetch data: ${error.message}", Toast.LENGTH_SHORT).show()
                     Log.e("DataPegawai", "Firebase Error: ${error.toException()}")
                 }
             })
@@ -149,8 +149,8 @@ class DataPegawaiActivity : AppCompatActivity() {
     private fun showDeleteConfirmation(pegawai: modelpegawai) {
         try {
             val builder = AlertDialog.Builder(this)
-            builder.setTitle("Konfirmasi Hapus")
-            builder.setMessage("Apakah Anda yakin ingin menghapus data pegawai ${pegawai.namaPegawai ?: "ini"}?")
+            builder.setTitle("Confirm Delete")
+            builder.setMessage("Are you sure you want to delete employee data? ${pegawai.namaPegawai ?: "ini"}?")
 
             builder.setPositiveButton("Ya") { _, _ ->
                 deletePegawai(pegawai)
@@ -177,17 +177,17 @@ class DataPegawaiActivity : AppCompatActivity() {
             pegawaiRef.removeValue()
                 .addOnSuccessListener {
                     if (!isFinishing && !isDestroyed) {
-                        Toast.makeText(this, "Data pegawai berhasil dihapus", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Employee data has been successfully deleted", Toast.LENGTH_SHORT).show()
                     }
                 }
                 .addOnFailureListener { exception ->
                     if (!isFinishing && !isDestroyed) {
-                        Toast.makeText(this, "Gagal menghapus data: ${exception.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Failed to delete data: ${exception.message}", Toast.LENGTH_SHORT).show()
                     }
                     Log.e("DataPegawai", "Delete Error: ${exception}")
                 }
         } else {
-            Toast.makeText(this, "ID Pegawai tidak valid", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Invalid Employee ID", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -197,12 +197,12 @@ class DataPegawaiActivity : AppCompatActivity() {
         if (!idPegawai.isNullOrEmpty()) {
             val currentDateTime = getCurrentDateTime()
             val pegawaiRef = myRef.child(idPegawai)
-            pegawaiRef.child("tanggalTerdaftar").setValue(currentDateTime)
+            pegawaiRef.child("dateupdated").setValue(currentDateTime)
                 .addOnSuccessListener {
-                    Log.d("DataPegawai", "Tanggal terdaftar berhasil diperbarui")
+                    Log.d("DataPegawai", "Registered date updated successfully")
                 }
                 .addOnFailureListener { exception ->
-                    Log.e("DataPegawai", "Gagal memperbarui tanggal terdaftar: ${exception.message}")
+                    Log.e("DataPegawai", "Failed to update registered date: ${exception.message}")
                 }
         }
     }

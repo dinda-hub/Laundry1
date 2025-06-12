@@ -122,13 +122,13 @@ class DataTransaksiActivity : AppCompatActivity() {
                 ?: throw NullPointerException("btnProsesTransaksi not found")
             Log.d("DataTransaksi", "btn_proses: OK")
 
-            Log.d("DataTransaksi", "Semua views berhasil diinisialisasi")
+            Log.d("DataTransaksi", "All views were initialized successfully")
 
         } catch (e: Exception) {
             Log.e("DataTransaksi", "Error saat inisialisasi: ${e.message}")
             Log.e("DataTransaksi", "Stacktrace: ", e)
 
-            Toast.makeText(this, "Error: View tidak ditemukan - ${e.message}", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Error: View not found - ${e.message}", Toast.LENGTH_LONG).show()
 
             // Tutup activity jika error kritis
             finish()
@@ -147,7 +147,7 @@ class DataTransaksiActivity : AppCompatActivity() {
                 // Hapus item dari list
                 dataList.remove(selectedTambahan)
                 tambahanAdapter.notifyDataSetChanged()
-                Toast.makeText(this, "Layanan tambahan dihapus", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Additional services removed", Toast.LENGTH_SHORT).show()
             }
             rvLayananTambahan.adapter = tambahanAdapter
 
@@ -216,9 +216,9 @@ class DataTransaksiActivity : AppCompatActivity() {
         }
 
         val message = if (missingData.isNotEmpty()) {
-            "Mohon lengkapi: ${missingData.joinToString(", ")}"
+            "Please complete: ${missingData.joinToString(", ")}"
         } else {
-            "Mohon lengkapi data transaksi"
+            "Please complete the transaction data"
         }
 
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
@@ -235,13 +235,13 @@ class DataTransaksiActivity : AppCompatActivity() {
                     val nama = data.getStringExtra("namaPelanggan") ?: ""
                     val nomorHP = data.getStringExtra("noHPPelanggan") ?: ""
 
-                    tvPelangganNama.text = "Nama Pelanggan : $nama"
-                    tvPelangganNoHP.text = "No HP : $nomorHP"
+                    tvPelangganNama.text = "Customer Name : $nama"
+                    tvPelangganNoHP.text = "Phone Number : $nomorHP"
 
                     namaPelanggan = nama
                     noHP = nomorHP
                 } else if (resultCode == RESULT_CANCELED) {
-                    Toast.makeText(this, "Batal Memilih Pelanggan", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Cancel Select Customer", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -251,13 +251,13 @@ class DataTransaksiActivity : AppCompatActivity() {
                     val nama = data.getStringExtra("namaLayanan") ?: ""
                     val harga = data.getStringExtra("hargaLayanan") ?: ""
 
-                    tvLayananNama.text = "Layanan : $nama"
-                    tvLayananHarga.text = "Harga : Rp. $harga"
+                    tvLayananNama.text = "Service Name : $nama"
+                    tvLayananHarga.text = "Price : Rp. $harga"
 
                     namaLayanan = nama
                     hargaLayanan = harga
                 } else if (resultCode == RESULT_CANCELED) {
-                    Toast.makeText(this, "Batal Memilih Layanan", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Cancel Select Service", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -285,14 +285,14 @@ class DataTransaksiActivity : AppCompatActivity() {
                         // Update RecyclerView
                         tambahanAdapter.notifyDataSetChanged()
 
-                        Toast.makeText(this, "Layanan tambahan ditambahkan: $nama", Toast.LENGTH_SHORT).show()
-                        Log.d("DataTransaksi", "Tambahan berhasil ditambahkan. Total: ${dataList.size}")
+                        Toast.makeText(this, "Additional services added: $nama", Toast.LENGTH_SHORT).show()
+                        Log.d("DataTransaksi", "Addition added successfully. Total: ${dataList.size}")
                     } else {
-                        Toast.makeText(this, "Data tambahan tidak valid", Toast.LENGTH_SHORT).show()
-                        Log.e("DataTransaksi", "Data tambahan kosong atau null")
+                        Toast.makeText(this, "Additional data is invalid", Toast.LENGTH_SHORT).show()
+                        Log.e("DataTransaksi", "Additional data is empty or null")
                     }
                 } else if (resultCode == RESULT_CANCELED) {
-                    Toast.makeText(this, "Batal Memilih Tambahan", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Deselect Additions", Toast.LENGTH_SHORT).show()
                 }
             }
         }

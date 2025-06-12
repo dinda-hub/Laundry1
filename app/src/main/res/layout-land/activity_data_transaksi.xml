@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#FFF8FF">
+    android:id="@+id/data_transaksi">
 
     <!-- Garis bantu vertikal untuk membagi 2 kolom -->
     <androidx.constraintlayout.widget.Guideline
@@ -28,18 +28,19 @@
 
         <!-- Data Pelanggan -->
         <TextView
-            android:id="@+id/tvDataPelanggan"
+            android:id="@+id/tvdatapelanggantransaksi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Data Pelanggan"
+            android:text="@string/datapelanggan_transaksi"
             android:textStyle="bold"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/tvNamaPelanggan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nama Pelanggan:"
+            android:text="@string/namapelanggan_transaksi"
             android:textSize="16sp"
             android:layout_marginTop="15dp"/>
 
@@ -47,7 +48,7 @@
             android:id="@+id/tvpilihpelangganNoHP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No HP:"
+            android:text="@string/nohppelanggan_transaksi"
             android:textSize="16sp"
             android:layout_marginTop="10dp"/>
 
@@ -55,26 +56,27 @@
             android:id="@+id/btnPilihPelanggan"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="Pilih Pelanggan"
-            android:backgroundTint="#29C5F6"
+            android:text="@string/pilihpelanggan_transaksi"
             android:textColor="#FFFFFF"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="16dp"/>
+            android:backgroundTint="#808080"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="15dp"/>
 
         <!-- Layanan Utama -->
         <TextView
-            android:id="@+id/tvLayananUtama"
+            android:id="@+id/datalayanantransaksi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Layanan Utama"
+            android:text="@string/layananutama_transaksi"
             android:textStyle="bold"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/tvNamaLayanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nama Layanan:"
+            android:text="@string/namalayanan_transaksi"
             android:textSize="16sp"
             android:layout_marginTop="15dp"/>
 
@@ -82,7 +84,7 @@
             android:id="@+id/tvpilihlayananHarga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Harga:"
+            android:text="@string/hargalayanan_transaksi"
             android:textSize="16sp"
             android:layout_marginTop="10dp"/>
 
@@ -90,10 +92,10 @@
             android:id="@+id/btnPilihLayanan"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="Pilih Layanan"
-            android:backgroundTint="#29C5F6"
+            android:text="@string/pilihlayanan_transaksi"
+            android:backgroundTint="#808080"
             android:textColor="#FFFFFF"
-            android:layout_marginTop="14dp"/>
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 
     <!-- Kolom kanan: Layanan Tambahan dan tombol -->
@@ -112,16 +114,16 @@
             android:id="@+id/tvLayananTambahan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Layanan Tambahan"
+            android:text="@string/layanantambahan_transaksi"
             android:textStyle="bold"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:layout_marginTop="10dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvLayananTambahan"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#FFF8FF"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="30dp"/>
 
@@ -138,9 +140,9 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:text="Tambahan"
+                android:text="@string/btntambahan_transaksi"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#FFB703"
+                android:backgroundTint="#B0C4DE"
                 android:layout_margin="4dp"/>
 
             <Button
@@ -148,9 +150,9 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:text="Proses"
+                android:text="@string/btnproses_transaksi"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#2ECC71"
+                android:backgroundTint="#778899"
                 android:layout_margin="4dp"/>
         </LinearLayout>
     </LinearLayout>

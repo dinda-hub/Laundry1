@@ -38,9 +38,9 @@ class adapterpilihpelanggan(
 
         // Set data ke views
         holder.tvIDPilihPelanggan.text = "[${pelanggan.idPelanggan}]"
-        holder.tvNamaPilihPelanggan.text = pelanggan.namaPelanggan ?: "Nama tidak tersedia"
-        holder.tvAlamatPilihPelanggan.text = "Alamat : ${pelanggan.alamatPelanggan ?: "Tidak tersedia"}"
-        holder.tvNoHPPilihPelanggan.text = "No HP : ${pelanggan.noHPPelanggan ?: "Tidak tersedia"}"
+        holder.tvNamaPilihPelanggan.text = pelanggan.namaPelanggan ?: holder.itemView.context.getString(R.string.nama_tidak_tersedia)
+        holder.tvAlamatPilihPelanggan.text = holder.itemView.context.getString(R.string.alamat_format, pelanggan.alamatPelanggan ?: holder.itemView.context.getString(R.string.tidak_tersedia))
+        holder.tvNoHPPilihPelanggan.text = holder.itemView.context.getString(R.string.no_hp_format, pelanggan.noHPPelanggan ?: holder.itemView.context.getString(R.string.tidak_tersedia))
 
         // Set click listener
         holder.cvPilihPelanggan.setOnClickListener {

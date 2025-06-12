@@ -67,7 +67,7 @@ class adapterdatacabang (
                     phoneNumber
                 }
 
-                val message = "Halo, saya ingin menanyakan informasi mengenai layanan laundry di cabang ${cabang.namaCabang}."
+                val message = "Hello, I would like to ask for information about laundry services at the branch. ${cabang.namaCabang}."
                 val whatsappIntent = Intent(Intent.ACTION_VIEW)
                 whatsappIntent.data = Uri.parse("https://wa.me/$formattedNumber?text=${Uri.encode(message)}")
 

@@ -142,7 +142,7 @@ class DataPelangganActivity : AppCompatActivity() {
         try {
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Konfirmasi Hapus")
-            builder.setMessage("Apakah Anda yakin ingin menghapus data pelanggan ${pelanggan.namaPelanggan ?: "ini"}?")
+            builder.setMessage("Are you sure you want to delete customer data? ${pelanggan.namaPelanggan ?: "ini"}?")
 
             builder.setPositiveButton("Ya") { _, _ ->
                 deletePelanggan(pelanggan)
@@ -169,17 +169,17 @@ class DataPelangganActivity : AppCompatActivity() {
             pelangganRef.removeValue()
                 .addOnSuccessListener {
                     if (!isFinishing && !isDestroyed) {
-                        Toast.makeText(this, "Data pelanggan berhasil dihapus", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Customer data successfully deleted", Toast.LENGTH_SHORT).show()
                     }
                 }
                 .addOnFailureListener { exception ->
                     if (!isFinishing && !isDestroyed) {
-                        Toast.makeText(this, "Gagal menghapus data: ${exception.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Failed to Delete Data: ${exception.message}", Toast.LENGTH_SHORT).show()
                     }
                     Log.e("DataPelanggan", "Delete Error: ${exception}")
                 }
         } else {
-            Toast.makeText(this, "ID Pelanggan tidak valid", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Customer ID Not Valid", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -191,10 +191,10 @@ class DataPelangganActivity : AppCompatActivity() {
             val pelangganRef = myRef.child(idPelanggan)
             pelangganRef.child("tanggalTerdaftar").setValue(currentDateTime)
                 .addOnSuccessListener {
-                    Log.d("DataPelanggan", "Tanggal terdaftar berhasil diperbarui")
+                    Log.d("DataPelanggan", "Registered date updated successfully")
                 }
                 .addOnFailureListener { exception ->
-                    Log.e("DataPelanggan", "Gagal memperbarui tanggal terdaftar: ${exception.message}")
+                    Log.e("DataPelanggan", "Failed to update registered date: ${exception.message}")
                 }
         }
     }

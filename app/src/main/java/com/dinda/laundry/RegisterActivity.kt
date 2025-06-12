@@ -41,7 +41,7 @@ class RegisterActivity : AppCompatActivity() {
             val password = edtPassword.text.toString().trim()
 
             if (nama.isEmpty() || phone.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Isi semua field!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Fill in all columns!", Toast.LENGTH_SHORT).show()
             } else {
                 val user = modelusers(password = password, username = nama)
 

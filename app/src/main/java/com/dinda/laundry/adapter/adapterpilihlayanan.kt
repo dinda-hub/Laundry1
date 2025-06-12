@@ -34,8 +34,8 @@ class adapterpilihlayanan (
 
         // Set data ke views
         holder.tvIDPilihLayanan.text = "[${layanan.idLayanan}]"
-        holder.tvNamaPilihLayanan.text = layanan.namaLayanan ?: "Nama tidak tersedia"
-        holder.tvHargaPilihLayanan.text = "Harga: Rp ${layanan.hargaLayanan ?: 0}"
+        holder.tvNamaPilihLayanan.text = layanan.namaLayanan ?: "Name not available"
+        holder.tvHargaPilihLayanan.text = "Rp ${layanan.hargaLayanan ?: 0}"
 
         // Set click listener
         holder.cvPilihLayanan.setOnClickListener {

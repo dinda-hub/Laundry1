@@ -92,26 +92,26 @@ class TambahanPegawaiActivity : AppCompatActivity() {
         val cabang = etCabang.text.toString()
 
         if (nama.isEmpty()) {
-            etNama.error = this.getString(R.string.validasi_nama)
-            Toast.makeText(this, this.getString(R.string.validasi_nama),Toast.LENGTH_SHORT).show()
+            etNama.error = this.getString(R.string.validasi_nama_pegawai)
+            Toast.makeText(this, this.getString(R.string.validasi_nama_pegawai),Toast.LENGTH_SHORT).show()
             etNama.requestFocus()
             return
         }
         if (alamat.isEmpty()) {
-            etAlamat.error = this.getString(R.string.validasi_alamat)
-            Toast.makeText(this, this.getString(R.string.validasi_alamat),Toast.LENGTH_SHORT).show()
+            etAlamat.error = this.getString(R.string.validasi_alamat_pegawai)
+            Toast.makeText(this, this.getString(R.string.validasi_alamat_pegawai),Toast.LENGTH_SHORT).show()
             etAlamat.requestFocus()
             return
         }
         if (noHp.isEmpty()) {
-            etNoHP.error = this.getString(R.string.validasi_no_hp)
-            Toast.makeText(this, this.getString(R.string.validasi_no_hp),Toast.LENGTH_SHORT).show()
+            etNoHP.error = this.getString(R.string.validasi_no_hp_pegawai)
+            Toast.makeText(this, this.getString(R.string.validasi_no_hp_pegawai),Toast.LENGTH_SHORT).show()
             etNoHP.requestFocus()
             return
         }
         if (cabang.isEmpty()) {
-            etCabang.error = this.getString(R.string.validasi_cabang)
-            Toast.makeText(this, this.getString(R.string.validasi_cabang),Toast.LENGTH_SHORT).show()
+            etCabang.error = this.getString(R.string.validasi_cabang_pegawai)
+            Toast.makeText(this, this.getString(R.string.validasi_cabang_pegawai),Toast.LENGTH_SHORT).show()
             etCabang.requestFocus()
             return
         }
@@ -141,10 +141,10 @@ class TambahanPegawaiActivity : AppCompatActivity() {
         UpdateData["noHPPegawai"] = data.noHPPegawai.toString()
         UpdateData["idCabang"] = data.cabangPegawai.toString()
         pegawaiRef.updateChildren(UpdateData).addOnSuccessListener {
-            Toast.makeText(this@TambahanPegawaiActivity,"Data Pegawai Diperbarui", Toast.LENGTH_SHORT)
+            Toast.makeText(this@TambahanPegawaiActivity,"Employee Data Updated", Toast.LENGTH_SHORT)
             finish()
         }.addOnFailureListener {
-            Toast.makeText(this@TambahanPegawaiActivity, "Data Pegawai Gagal Diperbarui", Toast.LENGTH_SHORT)
+            Toast.makeText(this@TambahanPegawaiActivity, "Employee Data Failed to Update", Toast.LENGTH_SHORT)
         }
     }
 

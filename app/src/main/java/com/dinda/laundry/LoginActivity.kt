@@ -68,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
             Log.d(TAG, "Phone: $phone, Password length: ${password.length}")
 
             if (phone.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Isi No. Telp dan Password!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Fill in your Phone Number and Password!", Toast.LENGTH_SHORT).show()
                 Log.w(TAG, "Empty phone or password")
             } else {
                 loginUser(phone, password)
@@ -104,7 +104,7 @@ class LoginActivity : AppCompatActivity() {
         val userPhone = sharedPreferences.getString(KEY_USER_PHONE, "")
 
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("nama", userName)
+        intent.putExtra("name", userName)
         intent.putExtra("phone", userPhone)
         startActivity(intent)
         finish()

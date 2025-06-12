@@ -89,7 +89,7 @@ class PilihPelangganActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@PilihPelangganActivity, "Gagal memuat data", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@PilihPelangganActivity, "Failed to load data", Toast.LENGTH_SHORT).show()
             }
         })
     }
@@ -136,9 +136,9 @@ class PilihPelangganActivity : AppCompatActivity() {
 
             // Update pesan berdasarkan kondisi
             tvKosong.text = if (listPelanggan.isEmpty()) {
-                "Tidak ada data pelanggan"
+                "No Customer data"
             } else {
-                "Tidak ada hasil pencarian"
+                "No search results"
             }
         } else {
             tvKosong.visibility = View.GONE

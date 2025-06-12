@@ -153,16 +153,13 @@ class InvoiceActivity : AppCompatActivity() {
             btnCetak = findViewById(R.id.btn_cetak_invoice)
             btnKirimWhatsapp = findViewById(R.id.btn_kirim_wa)
 
-            // Coba cari tvStatus, jika tidak ada biarkan null
-            tvStatus = findViewById(R.id.tvStatus)
-
             // Coba cari RecyclerView, jika tidak ada biarkan null
             rvTambahan = findViewById(R.id.rv_tambahan_konfirmasi)
 
             // Cari tvTotalBayar dengan ID yang ada di layout saat ini
             tvTotalBayar = findViewById(R.id.tv_total_bayar)
                 ?: findViewById(R.id.tv_total_bayar)
-                        ?: throw IllegalStateException("TextView untuk total bayar tidak ditemukan")
+                        ?: throw IllegalStateException("TextView for total payment not found")
 
         } catch (e: Exception) {
             Log.e(TAG, "Error initializing views", e)
@@ -341,7 +338,7 @@ class InvoiceActivity : AppCompatActivity() {
                     ?: ""
 
         Log.d(TAG, "NoHP from invoice object: '$noHPPelanggan'")
-        tvNoHP.text = "No. HP: ${if (noHPPelanggan.isNotEmpty()) noHPPelanggan else "Tidak tersedia"}"
+        tvNoHP.text = "Phone Number: ${if (noHPPelanggan.isNotEmpty()) noHPPelanggan else "Not Available"}"
 
         @Suppress("UNCHECKED_CAST")
         val tambahan = intent.getSerializableExtra("layanan") as? ArrayList<modeltransaksitambahan> ?: arrayListOf()
@@ -410,11 +407,11 @@ class InvoiceActivity : AppCompatActivity() {
         // Tampilkan nomor HP dengan status yang jelas
         val displayHP = when {
             noHPPelanggan.isNotEmpty() && noHPPelanggan.isNotBlank() -> noHPPelanggan
-            else -> "Tidak tersedia"
+            else -> "Not Available"
         }
-        tvNoHP.text = "No. HP: $displayHP"
+        tvNoHP.text = "$displayHP"
 
-        tvStatus?.text = "Menunggu Pembayaran ($metodePembayaran)"
+        tvStatus?.text = "Waiting for Payment ($metodePembayaran)"
         tvLayananUtama.text = layanan
 
         // Update RecyclerView untuk tambahan
@@ -462,7 +459,7 @@ class InvoiceActivity : AppCompatActivity() {
     private fun setupButtons() {
         btnCetak.setOnClickListener {
             if (!hasBluetoothConnectPermission()) {
-                showToast("Izin Bluetooth diperlukan untuk mencetak")
+                showToast("Bluetooth permission is required for printing")
                 return@setOnClickListener
             }
 
@@ -474,8 +471,8 @@ class InvoiceActivity : AppCompatActivity() {
             Log.d(TAG, "WhatsApp button clicked. noHPPelanggan = '$noHPPelanggan'")
 
             // Validasi nomor HP sebelum mengirim
-            if (noHPPelanggan.isEmpty() || noHPPelanggan.isBlank() || noHPPelanggan == "Tidak tersedia") {
-                showToast("Nomor HP pelanggan tidak tersedia atau tidak valid")
+            if (noHPPelanggan.isEmpty() || noHPPelanggan.isBlank() || noHPPelanggan == "Not Available") {
+                showToast("Customer mobile number is not available or invalid")
                 Log.w(TAG, "WhatsApp failed: No valid phone number. Value: '$noHPPelanggan'")
                 return@setOnClickListener
             }
@@ -487,43 +484,94 @@ class InvoiceActivity : AppCompatActivity() {
 
     private fun buildPrintMessage(): String {
         return buildString {
+            // Header
+            append("================================\n")
+            append("          LAUNDRY DINDA         \n")
+            append("        Alamat Laundry         \n")
+            append("================================\n")
             append("\n")
-            append("Laundry Dinda\n")
-            append("Alamat Laundry\n")
-            append("==============================\n")
-            append("ID Transaksi: ${tvIdTransaksi.text}\n")
-            append("Tanggal: ${tvTanggal.text}\n")
-            append("Pelanggan: ${tvNamaPelanggan.text}\n")
+
+            // Informasi Transaksi
+            append("ID Transaksi : ${tvIdTransaksi.text}\n")
+            append("Tanggal      : ${tvTanggal.text}\n")
+            append("Pelanggan    : ${tvNamaPelanggan.text}\n")
 
             // Tampilkan nomor HP di struk jika tersedia
             if (noHPPelanggan.isNotEmpty() && noHPPelanggan != "Tidak tersedia") {
-                append("No. HP: $noHPPelanggan\n")
+                append("No. HP       : $noHPPelanggan\n")
             }
 
-            tvStatus?.let { append("Status: ${it.text}\n") }
-            append("------------------------------\n")
+            tvStatus?.let {
+                append("Status       : ${it.text}\n")
+            }
 
-            val namaUtama = tvLayananUtama.text.toString().take(20).padEnd(20)
-            val hargaUtama = tvHargaLayanan.text.toString().padStart(10)
-            append("$namaUtama$hargaUtama\n")
+            append("--------------------------------\n")
 
+            // Layanan Utama
+            val namaUtama = tvLayananUtama.text.toString()
+            val hargaUtama = tvHargaLayanan.text.toString()
+
+            append("LAYANAN UTAMA:\n")
+            append(formatItemLine(namaUtama, hargaUtama))
+
+            // Layanan Tambahan
             if (listTambahan.isNotEmpty()) {
-                append("\nLayanan Tambahan:\n")
+                append("\nLAYANAN TAMBAHAN:\n")
                 listTambahan.forEachIndexed { index, item ->
-                    val nama = "${index + 1}. ${item.namaLayanan ?: ""}".take(20).padEnd(20)
-                    val harga = (item.hargaLayanan ?: "0").padStart(12)
-                    append("$nama Rp $harga\n")
+                    val namaItem = "${index + 1}. ${item.namaLayanan ?: ""}"
+                    val hargaItem = "Rp ${item.hargaLayanan ?: "0"}"
+                    append(formatItemLine(namaItem, hargaItem))
                 }
-                append("------------------------------\n")
-                append("Subtotal Tambahan: ${tvSubtotalTambahan.text}\n")
+                append("--------------------------------\n")
+                append(formatItemLine("Subtotal Tambahan", tvSubtotalTambahan.text.toString()))
             }
 
-            append("TOTAL BAYAR: ${tvTotalBayar.text}\n")
-            append("==============================\n")
-            append("Terima kasih telah memilih\n")
-            append("Laundry Dinda\n")
+            append("================================\n")
+            append(formatTotalLine("TOTAL BAYAR", tvTotalBayar.text.toString()))
+            append("================================\n")
+            append("\n")
+            append("     Terima kasih telah         \n")
+            append("    memilih LAUNDRY DINDA       \n")
+            append("\n")
+            append("--------------------------------\n")
+            append("        Simpan struk ini        \n")
+            append("      sebagai bukti transaksi   \n")
             append("\n\n\n")
         }
+    }
+
+    private fun formatItemLine(nama: String, harga: String): String {
+        val maxWidth = 32 // Total lebar struk
+        val cleanHarga = harga.replace("Rp", "").trim()
+        val formattedHarga = "Rp $cleanHarga"
+
+        // Jika nama terlalu panjang, potong dan beri ...
+        val maxNamaWidth = maxWidth - formattedHarga.length - 1
+        val namaFormatted = if (nama.length > maxNamaWidth) {
+            nama.take(maxNamaWidth - 3) + "..."
+        } else {
+            nama
+        }
+
+        // Hitung spasi yang dibutuhkan
+        val spacesCount = maxWidth - namaFormatted.length - formattedHarga.length
+        val spaces = " ".repeat(maxOf(1, spacesCount))
+
+        return "$namaFormatted$spaces$formattedHarga\n"
+    }
+
+    // Fungsi helper untuk format total dengan emphasis
+    private fun formatTotalLine(label: String, amount: String): String {
+        val maxWidth = 32
+        val cleanAmount = amount.replace("Rp", "").trim()
+        val formattedAmount = "Rp $cleanAmount"
+        val totalText = "$label: $formattedAmount"
+
+        // Center align untuk total
+        val padding = (maxWidth - totalText.length) / 2
+        val leftPadding = " ".repeat(maxOf(0, padding))
+
+        return "$leftPadding$totalText\n"
     }
 
     private fun buildWhatsappMessage(): String {
@@ -558,7 +606,7 @@ class InvoiceActivity : AppCompatActivity() {
             Log.d(TAG, "Original number: '$noHPPelanggan', Formatted: '$formattedNumber'")
 
             if (formattedNumber.isEmpty()) {
-                showToast("Nomor HP tidak valid atau tidak dapat diformat")
+                showToast("Mobile number is invalid or cannot be formatted")
                 return
             }
 
@@ -580,9 +628,9 @@ class InvoiceActivity : AppCompatActivity() {
                 val fallbackUrl = "https://api.whatsapp.com/send?phone=$formattedNumber&text=${Uri.encode(message)}"
                 val fallbackIntent = Intent(Intent.ACTION_VIEW, Uri.parse(fallbackUrl))
                 startActivity(fallbackIntent)
-                showToast("Membuka WhatsApp...")
+                showToast("Open WhatsApp...")
             } catch (e2: Exception) {
-                showToast("Tidak dapat membuka WhatsApp")
+                showToast("Can't open WhatsApp")
             }
         }
     }
@@ -591,7 +639,7 @@ class InvoiceActivity : AppCompatActivity() {
     private fun formatPhoneNumber(phoneNumber: String): String {
         Log.d(TAG, "formatPhoneNumber called with: '$phoneNumber'")
 
-        if (phoneNumber.isEmpty() || phoneNumber.isBlank() || phoneNumber == "Tidak tersedia") {
+        if (phoneNumber.isEmpty() || phoneNumber.isBlank() || phoneNumber == "Not Available") {
             Log.w(TAG, "Phone number is empty, blank, or 'Tidak tersedia'")
             return ""
         }
@@ -640,14 +688,14 @@ class InvoiceActivity : AppCompatActivity() {
 
     private fun createBluetoothSocket(device: BluetoothDevice): BluetoothSocket? {
         if (!hasBluetoothConnectPermission()) {
-            showToastOnMainThread("Izin Bluetooth diperlukan")
+            showToastOnMainThread("Bluetooth permission is required")
             return null
         }
 
         return try {
             device.createRfcommSocketToServiceRecord(printerUUID)
         } catch (e: SecurityException) {
-            showToastOnMainThread("Izin Bluetooth diperlukan")
+            showToastOnMainThread("Bluetooth permission is required")
             null
         } catch (e: Exception) {
             try {
@@ -663,7 +711,7 @@ class InvoiceActivity : AppCompatActivity() {
     private fun printToBluetooth(text: String) {
         Thread {
             if (!hasBluetoothConnectPermission()) {
-                showToastOnMainThread("Izin Bluetooth diperlukan untuk mencetak")
+                showToastOnMainThread("Bluetooth permission is required for printing")
                 return@Thread
             }
 
@@ -672,57 +720,57 @@ class InvoiceActivity : AppCompatActivity() {
 
             try {
                 if (bluetoothAdapter == null) {
-                    showToastOnMainThread("Bluetooth tidak tersedia")
+                    showToastOnMainThread("BBluetooth is not available")
                     return@Thread
                 }
 
                 if (!bluetoothAdapter!!.isEnabled) {
-                    showToastOnMainThread("Bluetooth tidak aktif")
+                    showToastOnMainThread("Bluetooth is not active")
                     return@Thread
                 }
 
                 val device: BluetoothDevice? = try {
                     bluetoothAdapter?.getRemoteDevice(printerMAC)
                 } catch (e: SecurityException) {
-                    showToastOnMainThread("Izin Bluetooth diperlukan untuk mengakses perangkat")
+                    showToastOnMainThread("Bluetooth permission is required to access the device")
                     return@Thread
                 } catch (e: Exception) {
-                    showToastOnMainThread("Printer tidak ditemukan: ${e.message}")
+                    showToastOnMainThread("Printer not found: ${e.message}")
                     return@Thread
                 }
 
                 if (device == null) {
-                    showToastOnMainThread("Printer tidak ditemukan")
+                    showToastOnMainThread("Printer not found")
                     return@Thread
                 }
 
                 socket = createBluetoothSocket(device)
                 if (socket == null) {
-                    showToastOnMainThread("Gagal membuat socket Bluetooth")
+                    showToastOnMainThread("Failed to create Bluetooth socket")
                     return@Thread
                 }
 
                 try {
                     bluetoothAdapter?.cancelDiscovery()
                 } catch (e: SecurityException) {
-                    showToastOnMainThread("Izin Bluetooth diperlukan")
+                    showToastOnMainThread("Bluetooth permission is required")
                     return@Thread
                 }
 
-                showToastOnMainThread("Menghubungkan ke printer...")
+                showToastOnMainThread("Connecting to a printer...")
                 socket.connect()
 
                 stream = socket.outputStream
                 stream.write(text.toByteArray())
                 stream.flush()
 
-                showToastOnMainThread("Cetak berhasil")
+                showToastOnMainThread("Print successful")
 
             } catch (e: SecurityException) {
-                showToastOnMainThread("Izin Bluetooth diperlukan")
+                showToastOnMainThread("Bluetooth permission is required")
                 Log.e(TAG, "Bluetooth security exception", e)
             } catch (e: Exception) {
-                showToastOnMainThread("Gagal mencetak: ${e.message}")
+                showToastOnMainThread("Print failed: ${e.message}")
                 Log.e(TAG, "Bluetooth printing error", e)
             } finally {
                 try {
@@ -750,9 +798,9 @@ class InvoiceActivity : AppCompatActivity() {
         when (requestCode) {
             REQUEST_BLUETOOTH_PERMISSIONS -> {
                 if (grantResults.isNotEmpty() && grantResults.all { it == PackageManager.PERMISSION_GRANTED }) {
-                    showToast("Izin Bluetooth diberikan")
+                    showToast("IBluetooth permission granted")
                 } else {
-                    showToast("Izin Bluetooth diperlukan untuk mencetak")
+                    showToast("Bluetooth permission is required for printing")
                 }
             }
         }

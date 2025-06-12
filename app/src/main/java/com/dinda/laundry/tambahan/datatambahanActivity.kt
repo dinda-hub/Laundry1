@@ -90,19 +90,19 @@ class datatambahanActivity : AppCompatActivity() {
                     adapter.notifyDataSetChanged()
 
                     if (tambahanList.isEmpty()) {
-                        Toast.makeText(this@datatambahanActivity, "Data tambahan kosong", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@datatambahanActivity, "Additional data is empty", Toast.LENGTH_SHORT).show()
                     }
 
                     Log.d(TAG, "Loaded ${tambahanList.size} tambahan items")
 
                 } catch (e: Exception) {
                     Log.e(TAG, "Error processing data: ${e.message}", e)
-                    Toast.makeText(this@datatambahanActivity, "Error memproses data: ${e.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@datatambahanActivity, "Error processing data: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@datatambahanActivity, "Gagal load data: ${error.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@datatambahanActivity, "Failed load data: ${error.message}", Toast.LENGTH_SHORT).show()
                 Log.e(TAG, "Firebase Error: ${error.toException()}")
             }
         })

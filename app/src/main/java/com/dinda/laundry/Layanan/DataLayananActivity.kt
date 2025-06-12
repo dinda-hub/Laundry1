@@ -83,10 +83,10 @@ class DataLayananActivity : AppCompatActivity() {
                         // Refresh data jika dipanggil dari dialog
                         getDATA()
                     }
-                    Toast.makeText(this, "Layanan berhasil dihapus", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Service successfully deleted", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener { exception ->
-                    Toast.makeText(this, "Gagal menghapus layanan: ${exception.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Failed to delete serviceG: ${exception.message}", Toast.LENGTH_SHORT).show()
                 }
         }
     }
@@ -135,12 +135,12 @@ class DataLayananActivity : AppCompatActivity() {
 
     private fun showDeleteConfirmationDialog(layanan: modellayanan) {
         AlertDialog.Builder(this)
-            .setTitle("Konfirmasi Hapus")
-            .setMessage("Apakah Anda yakin ingin menghapus layanan \"${layanan.namaLayanan}\"?")
-            .setPositiveButton("Hapus") { _, _ ->
+            .setTitle("Confirm Delete")
+            .setMessage("Are you sure you want to delete the service?\"${layanan.namaLayanan}\"?")
+            .setPositiveButton("Delete") { _, _ ->
                 deleteLayananFromFirebase(layanan, -1)
             }
-            .setNegativeButton("Batal", null)
+            .setNegativeButton("Cancel", null)
             .show()
     }
 
@@ -195,12 +195,12 @@ class DataLayananActivity : AppCompatActivity() {
                 100 -> {
                     // Edit result - refresh data
                     getDATA()
-                    Toast.makeText(this, "Data layanan berhasil diperbarui", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Service data successfully updated", Toast.LENGTH_SHORT).show()
                 }
                 200 -> {
                     // Add result - refresh data
                     getDATA()
-                    Toast.makeText(this, "Layanan baru berhasil ditambahkan", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "New service successfully added", Toast.LENGTH_SHORT).show()
                 }
             }
         }

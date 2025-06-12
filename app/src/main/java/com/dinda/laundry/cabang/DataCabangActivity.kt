@@ -106,19 +106,19 @@ class DataCabangActivity : AppCompatActivity() {
             startActivity(intent)
         } catch (e: Exception) {
             Log.e(TAG, "Error navigating to TambahanCabangActivity: ${e.message}", e)
-            Toast.makeText(this, "Activity TambahanCabangActivity belum dibuat atau tidak terdaftar di manifest", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Additional ActivityBranchActivity has not been created or is not listed in the manifest", Toast.LENGTH_LONG).show()
         }
     }
 
     private fun showDeleteConfirmationDialog(cabang: modelcabang) {
         try {
             AlertDialog.Builder(this)
-                .setTitle("Konfirmasi Hapus")
-                .setMessage("Apakah Anda yakin ingin menghapus cabang \"${cabang.namaCabang}\"?")
-                .setPositiveButton("Hapus") { _, _ ->
+                .setTitle("Confirm Delete")
+                .setMessage("Are you sure you want to delete the branch? \"${cabang.namaCabang}\"?")
+                .setPositiveButton("Delete") { _, _ ->
                     hapusDataCabang(cabang)
                 }
-                .setNegativeButton("Batal", null)
+                .setNegativeButton("Cancel", null)
                 .show()
         } catch (e: Exception) {
             Log.e(TAG, "Error showing delete dialog: ${e.message}", e)
@@ -160,16 +160,16 @@ class DataCabangActivity : AppCompatActivity() {
 
     private fun hapusDataCabang(cabang: modelcabang) {
         if (cabang.idCabang.isNullOrEmpty()) {
-            Toast.makeText(this, "ID cabang tidak valid", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Branch ID not valid", Toast.LENGTH_SHORT).show()
             return
         }
 
         myRef.child(cabang.idCabang!!).removeValue()
             .addOnSuccessListener {
-                Toast.makeText(this, "Data cabang berhasil dihapus", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Branch data successfully deleted", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener { e ->
-                Toast.makeText(this, "Gagal menghapus data: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Failed to delete data: ${e.message}", Toast.LENGTH_SHORT).show()
                 Log.e(TAG, "Error deleting data: ${e.message}", e)
             }
     }
@@ -188,25 +188,25 @@ class DataCabangActivity : AppCompatActivity() {
                             val cabang = dataSnapshot.getValue(modelcabang::class.java)
                             if (cabang != null) {
                                 cabangList.add(cabang)
-                                Log.d(TAG, "Added cabang: ${cabang.namaCabang}")
+                                Log.d(TAG, "Added branch: ${cabang.namaCabang}")
                             }
                         }
                         cabangList.reverse() // Supaya data terbaru muncul di atas
                         adapter.notifyDataSetChanged()
 
                         if (cabangList.isEmpty()) {
-                            Toast.makeText(this@DataCabangActivity, "Data cabang kosong", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@DataCabangActivity, "Empty branch data", Toast.LENGTH_SHORT).show()
                         }
 
                         Log.d(TAG, "Loaded ${cabangList.size} cabang items")
                     } catch (e: Exception) {
                         Log.e(TAG, "Error processing data: ${e.message}", e)
-                        Toast.makeText(this@DataCabangActivity, "Error memproses data: ${e.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@DataCabangActivity, "Error processing data: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(this@DataCabangActivity, "Gagal mengakses data: ${error.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@DataCabangActivity, "Failed to access data: ${error.message}", Toast.LENGTH_SHORT).show()
                     Log.e(TAG, "Firebase Error: ${error.toException()}")
                 }
             })

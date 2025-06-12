@@ -42,11 +42,11 @@ class adapterdatapelanggan(
         val pelanggan = pelangganList[position]
 
         holder.tvDataIDPelanggan.text = pelanggan.idPelanggan ?: "N/A"
-        holder.tvDataNamaPelanggan.text = pelanggan.namaPelanggan ?: "Nama tidak tersedia"
-        holder.tvDataAlamatPelanggan.text = pelanggan.alamatPelanggan ?: "Alamat tidak tersedia"
-        holder.tvDataNoHpPelanggan.text = pelanggan.noHPPelanggan ?: "No HP tidak tersedia"
-        holder.tvDataCabangPelanggan.text = pelanggan.idCabangPelanggan ?: "Cabang tidak tersedia"
-        holder.tvDataTerdaftarPelanggan.text = pelanggan.tanggalTerdaftar ?: "Tanggal tidak tersedia"
+        holder.tvDataNamaPelanggan.text = pelanggan.namaPelanggan ?: "Name not available"
+        holder.tvDataAlamatPelanggan.text = pelanggan.alamatPelanggan ?: "Address not available"
+        holder.tvDataNoHpPelanggan.text = pelanggan.noHPPelanggan ?: "Mobile number not available"
+        holder.tvDataCabangPelanggan.text = pelanggan.idCabangPelanggan ?: "Branch not available"
+        holder.tvDataTerdaftarPelanggan.text = pelanggan.tanggalTerdaftar ?: "Date not available"
 
         // Tombol Hubungi - membuka WhatsApp atau dialer
         holder.btDataHubungiPelanggan.setOnClickListener {
@@ -66,7 +66,7 @@ class adapterdatapelanggan(
                     holder.itemView.context.startActivity(dialIntent)
                 }
             } else {
-                Toast.makeText(holder.itemView.context, "Nomor telepon tidak tersedia", Toast.LENGTH_SHORT).show()
+                Toast.makeText(holder.itemView.context, "Mobile number not available", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -104,11 +104,11 @@ class adapterdatapelanggan(
 
         // Set data
         tvIdPelanggan.text = pelanggan.idPelanggan ?: "N/A"
-        tvNama.text = pelanggan.namaPelanggan ?: "Nama tidak tersedia"
-        tvAlamat.text = pelanggan.alamatPelanggan ?: "Alamat tidak tersedia"
-        tvNoHP.text = pelanggan.noHPPelanggan ?: "No HP tidak tersedia"
-        tvCabang.text = pelanggan.idCabangPelanggan ?: "Cabang tidak tersedia"
-        tvTerdaftar.text = pelanggan.tanggalTerdaftar ?: "Tanggal tidak tersedia"
+        tvNama.text = pelanggan.namaPelanggan ?: "Name not available"
+        tvAlamat.text = pelanggan.alamatPelanggan ?: "Address not available"
+        tvNoHP.text = pelanggan.noHPPelanggan ?: "Mobile number not available"
+        tvCabang.text = pelanggan.idCabangPelanggan ?: "Branch not available"
+        tvTerdaftar.text = pelanggan.tanggalTerdaftar ?: "Date not available"
 
         // Tombol Edit
         btnEdit.setOnClickListener {

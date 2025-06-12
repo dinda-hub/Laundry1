@@ -35,8 +35,8 @@ class adapterdatapegawai(
         holder.tvNama.text = item.namaPegawai ?: ""
         holder.tvAlamat.text = item.alamatPegawai ?: ""
         holder.tvNoHP.text = item.noHPPegawai ?: ""
-        holder.tvTerdaftar.text = "Terdaftar: ${item.tanggalTerdaftar ?: "-"}"
-        holder.tvCabang.text = "Cabang ${item.cabangPegawai ?: "Tidak Ada Cabang"}"
+        holder.tvTerdaftar.text = "${item.tanggalTerdaftar ?: "-"}"
+        holder.tvCabang.text = "${item.cabangPegawai ?: "-"}"
 
         // Klik card view (itemView)
         holder.itemView.setOnClickListener {
@@ -58,7 +58,7 @@ class adapterdatapegawai(
                     phoneNumber
                 }
 
-                val message = "Halo ${item.namaPegawai}, saya ingin menghubungi Anda mengenai layanan laundry."
+                val message = "Hello ${item.namaPegawai}, I would like to contact you regarding laundry services."
                 val whatsappIntent = Intent(Intent.ACTION_VIEW)
                 whatsappIntent.data = Uri.parse("https://wa.me/$formattedNumber?text=${Uri.encode(message)}")
 

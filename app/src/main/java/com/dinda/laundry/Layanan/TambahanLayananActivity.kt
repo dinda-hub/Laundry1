@@ -51,17 +51,17 @@ class TambahanLayananActivity : AppCompatActivity() {
         Log.d("ValidationDebug", "Cabang: '$cabang'")
 
         if (nama.isEmpty()) {
-            etNama.error = "Nama layanan tidak boleh kosong"
+            etNama.error = "The service name cannot be empty"
             etNama.requestFocus()
             return
         }
         if (harga.isEmpty()) {
-            etHarga.error = "Harga layanan tidak boleh kosong"
+            etHarga.error = "The service price cannot be empty"
             etHarga.requestFocus()
             return
         }
         if (cabang.isEmpty()) {
-            etCabang.error = "Cabang layanan tidak boleh kosong"
+            etCabang.error = "The service branch cannot be empty"
             etCabang.requestFocus()
             return
         }
@@ -93,14 +93,14 @@ class TambahanLayananActivity : AppCompatActivity() {
 
         layananBaru.setValue(data)
             .addOnSuccessListener {
-                Log.d("SaveDebug", "Data berhasil disimpan ke Firebase")
-                Toast.makeText(this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show()
+                Log.d("SaveDebug", "Data successfully saved to Firebase")
+                Toast.makeText(this, "Data saved successfully", Toast.LENGTH_SHORT).show()
                 finish()
             }
             .addOnFailureListener { exception ->
-                Log.e("SaveError", "Gagal menyimpan data: ${exception.message}")
+                Log.e("SaveError", "Failed to save data: ${exception.message}")
                 exception.printStackTrace()
-                Toast.makeText(this, "Gagal menyimpan data: ${exception.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Failed to save data: ${exception.message}", Toast.LENGTH_LONG).show()
             }
     }
 }

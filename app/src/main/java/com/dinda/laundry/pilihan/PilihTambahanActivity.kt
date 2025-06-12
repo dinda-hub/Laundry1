@@ -129,7 +129,7 @@ class PilihTambahanActivity : AppCompatActivity() {
                                         listTambahan.add(finalTambahan)
                                         Log.d(TAG, "Added tambahan: ${finalTambahan.namaLayanan} - ${finalTambahan.hargaLayanan}")
                                     } else {
-                                        Log.w(TAG, "Skipped invalid tambahan: nama=${finalTambahan.namaLayanan}, harga=${finalTambahan.hargaLayanan}")
+                                        Log.w(TAG, "Skipped invalid tambahan: nama=${finalTambahan.namaLayanan}, price=${finalTambahan.hargaLayanan}")
                                     }
                                 } else {
                                     Log.w(TAG, "Null tambahan from Firebase for key: ${data.key}")
@@ -148,7 +148,7 @@ class PilihTambahanActivity : AppCompatActivity() {
                     } catch (e: Exception) {
                         Log.e(TAG, "Error processing Firebase data", e)
                         runOnUiThread {
-                            Toast.makeText(this@PilihTambahanActivity, "Error memproses data: ${e.message}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@PilihTambahanActivity, "Error processing data: ${e.message}", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -156,7 +156,7 @@ class PilihTambahanActivity : AppCompatActivity() {
                 override fun onCancelled(error: DatabaseError) {
                     Log.e(TAG, "Firebase error: ${error.message}")
                     runOnUiThread {
-                        Toast.makeText(this@PilihTambahanActivity, "Gagal memuat data: ${error.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@PilihTambahanActivity, "Failed to load data: ${error.message}", Toast.LENGTH_SHORT).show()
                         updateEmptyState()
                     }
                 }
@@ -214,9 +214,9 @@ class PilihTambahanActivity : AppCompatActivity() {
 
                 // Update pesan berdasarkan kondisi
                 tvKosong.text = if (listTambahan.isEmpty()) {
-                    "Tidak ada data tambahan"
+                    "No Addition data"
                 } else {
-                    "Tidak ada hasil pencarian"
+                    "TNo search results"
                 }
             } else {
                 tvKosong.visibility = View.GONE

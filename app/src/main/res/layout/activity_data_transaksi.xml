@@ -92,6 +92,7 @@
 
     <!-- LAYANAN TAMBAHAN -->
     <TextView
+        android:id="@+id/tvLayananTambahan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/layanantambahan_transaksi"

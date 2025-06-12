@@ -30,11 +30,11 @@ class adapterpilihtambahan (
             tvNomorUrut.text = (position + 1).toString()
 
             // Log data yang diterima untuk debugging
-            Log.d(TAG, "Binding position $position - ID: ${tambahan.id}, Nama: ${tambahan.namaLayanan}, Harga: ${tambahan.hargaLayanan}")
+            Log.d(TAG, "Binding position $position - ID: ${tambahan.id}, Name: ${tambahan.namaLayanan}, Harga: ${tambahan.hargaLayanan}")
 
             // Set nama layanan dengan validasi
             tvNama.text = if (tambahan.namaLayanan.isNullOrBlank()) {
-                Log.w(TAG, "Nama layanan kosong untuk position $position")
+                Log.w(TAG, "Empty service name for position $position")
                 "Layanan Tidak Diketahui"
             } else {
                 tambahan.namaLayanan
@@ -53,7 +53,7 @@ class adapterpilihtambahan (
         private fun formatHarga(harga: String?, position: Int): String {
             return when {
                 harga.isNullOrBlank() -> {
-                    Log.w(TAG, "Harga kosong untuk position $position")
+                    Log.w(TAG, "Empty price for position $position")
                     "Rp 0"
                 }
                 else -> {
@@ -73,7 +73,7 @@ class adapterpilihtambahan (
                         "Rp ${formatter.format(hargaNumber)}"
 
                     } catch (e: NumberFormatException) {
-                        Log.w(TAG, "Format harga error untuk position $position: ${e.message}")
+                        Log.w(TAG, "Price format error for position $position: ${e.message}")
                         "Rp $harga"
                     }
                 }

@@ -132,5 +132,20 @@
     <string name="Datapenggunatidakvalid">Invalid User Data</string>
     <string name="Nomorbelumterdaftar">Number not registered</string>
     <string name="Registerberhasil">Register Successful!</string>
-    <string name="Silakanregisteruntukmelanjutkan">Please register to continue</string>
+    <string name="Silakandaftaruntukmelanjutkan">Please register to create a new account</string>
+    <string name="sudahmemilikiakun">Already have an account?</string>
+    <string name="belummemilikiakun">Don\'t Have an Account?</string>
+    <string name="daftarsekarang">Register Now</string>
+    <string name="masuksekarang">Sign In Now</string>
+    <string name="daftar">Register</string>
+    <string name="namalengkap_register">Full Name</string>
+    <string name="nama_tidak_tersedia">Name not available</string>
+    <string name="tidak_tersedia">Not available</string>
+    <string name="alamat_format">Address : %1$s</string>
+    <string name="no_hp_format">Phone Number: %1$s</string>
+    <string name="harga_format">Price: Rp %1$d</string>
+    <string name="validasi_nama_pegawai">Employee name cannot be empty</string>
+    <string name="validasi_alamat_pegawai">Employee address cannot be empty</string>
+    <string name="validasi_no_hp_pegawai">Employee Phone Number cannot be empty</string>
+    <string name="validasi_cabang_pegawai">Employee Branches cannot empty</string>
 </resources>
